@@ -1,0 +1,73 @@
+:root {
+    --primary-bg: #F7EAD9;
+    --primary-text: #333333;
+    --secondary-text: #999999;
+    --font-family: 'Poppins', 'Lato', sans-serif;
+    --font-size-xsm: 0.9rem;
+    --font-size-sm: 1.1rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2.0rem;
+    --font-size-xl: 3.0rem;
+}
+
+
+/* ============================= */
+/*    Back to Top Button Styles  */
+/* ============================= */
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-text);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+#backToTopBtn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#backToTopBtn.show {
+    opacity: 1;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--secondary-text);
+    transform: scale(1.2);
+}
+
+#backToTopBtn:active {
+    transform: scale(0.8);
+}
+
+/* Accessibility - Screen Reader Text */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body{
+    font-family: var(--font-family);
+    font-size: var(--font-size-xsm);
+    background-color: var(--primary-background-color);
+    letter-spacing: 1px;
+}
