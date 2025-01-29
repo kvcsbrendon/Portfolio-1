@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Brendon Kovacs">
+    <meta name="keywords" content="recipes, virtual kitchen, cooking, food, cuisine">
+    <meta name="description" content="Explore delicious recipes from our virtual kitchen, featuring signature dishes and easy-to-follow cooking guides.">
+    <title>Bon Appétit!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="assets/scripts/backtotop.js"></script>
+    <script src="assets/scripts/year.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bon Appétit!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Contact us</h2>
+        <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+
+        <form class="form" id="contac-us-form" action="#" method="POST">
+            <label for="title">Title: </label>
+            <select class="dropdown" id="title" name="title">
+                <option value="mr">Mr.</option>
+                <option value="miss">Miss.</option>
+                <option value="ms">Ms.</option>
+                <option value="mrs">Mrs.</option>
+                <option value="dr">Dr.</option>
+            </select>
+            
+            <label for="first-name">First Name: </label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name e.g. John" required>
+            <small>First Name</small>
+
+            <label for="last-name">First Name: </label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name e.g. Smith" required>
+            <small>Last Name</small>
+
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email address e.g. johnsmith@gmail.com" required>
+            <small>Email</small>
+
+            <label for="phone">Phone number: </label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your Phone number e.g. +447467853726" required>
+            <small>Phone Number</small>
+            
+            <fieldset>
+                <legend>Preferred Contact Method: </legend>
+                <input type="radio" id="contact-phone" name="contact-method" value="phone" required>
+                <label for="contact-phone">Phone</label>
+                <input type="radio" id="contact-email" name="contact-method" value="email" required>
+                <label for="contact-email">Email</label>
+            </fieldset>
+
+            <label for="subject">Subject: </label>
+            <select class="dropdown" id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="support">Support</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea class="messagebox" id="contact-message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="button" id="submit-btn">Submit</button>
+        </form>
+    </main>
+
+    <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 6" aria-hidden="true">
+            <path d="M12 6H0l6-6z" fill="white"/>
+        </svg>
+        <span class="screen-reader-text">Back to top</span>
+    </a>
+    
+    <footer>
+        <div class="copyright">
+            <p>&copy; <span id="currentYear"></span> Bon Appétit is property of Brandonia Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
