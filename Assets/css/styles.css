@@ -1,5 +1,10 @@
+/* ============================= */
+/*           Root Styles         */
+/* ============================= */
+
 :root {
-    --primary-bg: #F7EAD9;
+    --primary-bg: #F5E5D3;
+    --secondary-bg: #EFD9C5;
     --primary-text: #333333;
     --secondary-text: #999999;
     --font-family: 'Poppins', 'Lato', sans-serif;
@@ -9,6 +14,37 @@
     --font-size-lg: 2.0rem;
     --font-size-xl: 3.0rem;
 }
+
+:root body { 
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+:root a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================= */
+/*          Logo Styles          */
+/* ============================= */
+
+#Logo {
+    position: absolute;
+    left: 20px; 
+    top: 15px;
+    display: inline-block;
+}
+  
+#Logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+/* ============================= */
+/*          Title Styles         */
+/* ============================= */
+
 
 
 /* ============================= */
@@ -37,6 +73,7 @@
 #backToTopBtn svg {
     width: 20px;
     height: 20px;
+    fill: var(--primary-bg);
 }
 
 #backToTopBtn.show {
@@ -64,9 +101,163 @@
     border: 0;
 }
 
+/* ============================= */
+/*          Body Styles          */
+/* ============================= */
 body{
     font-family: var(--font-family);
     font-size: var(--font-size-xsm);
-    background-color: var(--primary-background-color);
+    background-color: var(--primary-bg);
     letter-spacing: 1px;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+.title-motto a:hover{
+    text-decoration: none;
+}
+
+/* ============================= */
+/*         Footer Styles         */
+/* ============================= */
+footer {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #F0D0B1;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+}
+
+/* ====== Centered Title & Motto Above Social Icons ====== */
+.footer-left {
+    text-align: center;
+    flex: 1;
+}
+
+/* Style title and motto */
+.footer-left h3, 
+.footer-left p {
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Remove underline & default link color */
+
+
+/* ====== Social Icons Styling ====== */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 24px;
+    color: black;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #AA5A00; /* Darker orange for hover effect */
+}
+
+/* ====== Improved Middle Section (Personal Details) ====== */
+.footer-middle {
+    text-align: center;
+    flex: 1;
+}
+
+/* Style details for better readability */
+.footer-middle p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Ensure Address is multiline */
+.footer-middle .address {
+    white-space: pre-line;
+}
+
+/* ====== Align Subscribe Section Properly ====== */
+.footer-right {
+    text-align: center;
+    flex: 1;
+}
+
+/* Fix form layout */
+#subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#email {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#email:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #AA5A00;
+}
+
+/* Subscribe Button */
+#subscribe-form button {
+    background-color: #AA5A00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+#subscribe-form button:hover {
+    background-color: #884700; /* Darker hover effect */
+}
+
+/* ====== Footer Bottom (Links & Copyright) ====== */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-bottom .hyper-links a {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form</title>
+  <style>
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Book a Cooking Class</h1>
+  <form id="bookingForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="date">Preferred Date:</label>
+    <input type="date" id="date" name="date" required><br>
+    <small class="error" id="dateError" style="display: none;">Please select a weekday (Monday to Friday).</small><br><br>
+
+    <label for="time">Preferred Time:</label>
+    <input type="time" id="time" name="time" min="09:00" max="16:00" required><br>
+    <small class="error" id="timeError" style="display: none;">Please select a time between 9:00 AM and 4:00 PM.</small><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // JavaScript to handle form submission and validation
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      // Validate date (must be a weekday)
+      const selectedDate = new Date(date);
+      const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      if (dayOfWeek === 0 || dayOfWeek === 6) {
+        document.getElementById('dateError').style.display = 'block';
+        return; // Stop form submission
+      } else {
+        document.getElementById('dateError').style.display = 'none';
+      }
+
+      // Validate time (must be between 9 AM and 4 PM)
+      const selectedTime = new Date(`1970-01-01T${time}:00`);
+      const minTime = new Date(`1970-01-01T09:00:00`);
+      const maxTime = new Date(`1970-01-01T16:00:00`);
+      if (selectedTime < minTime || selectedTime > maxTime) {
+        document.getElementById('timeError').style.display = 'block';
+        return; // Stop form submission
+      } else {
+        document.getElementById('timeError').style.display = 'none';
+      }
+
+      // Construct the Calendly URL with pre-filled data
+      const calendlyUrl = `https://calendly.com/240210111-aston/cooking-class-for-beginners?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&time=${encodeURIComponent(time)}`;
+
+      // Redirect to Calendly
+      window.location.href = calendlyUrl;
+    });
+  </script>
+</body>
+</html>
