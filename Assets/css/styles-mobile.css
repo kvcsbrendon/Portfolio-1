@@ -1,0 +1,116 @@
+/* ============================= */
+/*       Mobile Adjustments      */
+/*         Max Width 768px       */
+/* ============================= */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+    }
+
+    #Logo-title {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    #main-nav {
+      display: none;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    #hamburger-menu {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--primary-text);
+        margin-bottom: 10px;
+      }
+
+    #main-nav.open {
+      display: block;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    #mode-toggle {
+      position: static;
+      transform: none;
+      margin-top: 10px;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left, .footer-middle, .footer-right {
+          width: 100%;
+          margin-bottom: 20px;
+          text-align: center;
+    }
+
+    .main-class {
+        max-width: 80%;
+        padding: 0 10px;
+    }
+
+    #contact-h2 {
+        font-size: 1.5rem;
+    }
+
+    #contact-p {
+        font-size: 0.9rem;
+    }
+
+    .button,
+    .mailto-button {
+        font-size: 0.9rem;
+    }
+  }
+
+
+/* ============================= */
+/*       Mobile Adjustments      */
+/*         Max Width 480px       */
+/* ============================= */
+  @media (max-width: 480px) {
+    header {
+      padding: 15px;
+    }
+    #Logo img {
+      height: 60px;
+    }
+    .title-motto h1 {
+      font-size: var(--font-size-md);
+    }
+    .title-motto p {
+      font-size: var(--font-size-sm);
+    }
+    nav ul li a {
+      padding: 5px;
+      font-size: var(--font-size-xsm);
+    }
+
+    #contact-h2 {
+        font-size: 1.25rem;
+    }
+
+    #contact-p {
+        font-size: 0.8rem;
+    }
+
+    .button,
+    .mailto-button {
+        font-size: 0.8rem;
+    }
+  }
