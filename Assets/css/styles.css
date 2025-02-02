@@ -4,51 +4,86 @@
 :root {
     --primary-bg: #F5E5D3;
     --secondary-bg: #EFD9C5;
+    --social-hover: rgba(212, 138, 60, 0.7);
+    --input: #FAF1E8 ;
+    --primary-btn: #D48A3C;
+    --primary-btn-hover: #E6A86B;
+    --btn-border: #6B4F4F;
     --the-line: #F0D0B1;
     --primary-text: #333333;
     --secondary-text: #999999;
+    --border: #ccc;
     --font-family: 'Poppins', 'Lato', sans-serif;
-    --font-size-xsm: 0.7rem;
-    --font-size-sm: 0.9rem;
-    --font-size-md: 1.5rem;
-    --font-size-lg: 2.0rem;
-    --font-size-xl: 3.0rem;
+
+    /* Font Sizes. ChatGPT Recommendation */
+    --font-size-xxs: 0.625rem;  /* 10px - Extra Small */
+    --font-size-xsm: 0.75rem;   /* 12px - Small */
+    --font-size-sm: 0.875rem;   /* 14px - Slightly larger small */
+    --font-size-md: clamp(1rem, 1vw, 1.125rem);
+    --font-size-lg: clamp(1.25rem, 2vw, 1.5rem);
+    --font-size-xl: clamp(1.5rem, 2.5vw, 2rem);
+    --font-size-2xl: 2rem;      /* 32px - Headings */
+    --font-size-3xl: 2.5rem;    /* 40px - Bigger Headings */
+    --font-size-4xl: 3rem;      /* 48px - Very Large */
+    --font-size-5xl: 3.75rem;   /* 60px - Extra Large */
+    --font-size-6xl: 4.5rem;    /* 72px - Huge */
+
   }
   
 /* ============================= */
 /*      Dark Mode Overrides      */
 /* ============================= */
-  body.dark-mode {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #333333;
-    --the-line: #444444;
-    --primary-text: #e0e0e0;
-    --secondary-text: #b0b0b0;
-  }
+body.dark-mode {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #333333;
+  --input: #1F1B24;
+  --the-line: #444444;
+  --primary-text: #e0e0e0;
+  --secondary-text: #b0b0b0;
+  --primary-btn: #3700B3;
+  --primary-btn-hover: #6200ee;
+  --btn-border: #03DAC6;
+  --border: #666666;
+  --social-hover:  rgba(98, 0, 238, 0.7);
+}
   
   /* ============================= */
   /*         Global Settings       */
   /* ============================= */
   *, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
   
   body {
     font-family: var(--font-family);
     background-color: var(--primary-bg);
+    font-size: var(--font-size-md);
     color: var(--primary-text);
     letter-spacing: 1px;
     margin: 0;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
   
   a {
     text-decoration: none;
     color: inherit;
   }
   
-  a:hover {
+  em {
     text-decoration: underline;
   }
   
@@ -58,17 +93,7 @@
   
   /* ============================= */
   /*         Utility Classes       */
-  /* ============================= */
-  
-  .press:hover {
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .press:active {
-    transform: scale(0.8);
-  }
-  
+  /* ============================= */  
   .screen-reader-text {
     position: absolute;
     width: 1px;
@@ -86,7 +111,8 @@
 
 header {
     background-color: var(--secondary-bg);
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 20px 20px 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,10 +124,9 @@ header {
   header {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
 }
-  
-  /* Logo and Title Container */
+
   #Logo-title {
     display: flex;
     align-items: center;
@@ -109,7 +134,6 @@ header {
     flex: 1;
   }
   
-  /* Logo Styles */
   #Logo {
     display: flex;
     align-items: center;
@@ -124,10 +148,9 @@ header {
   }
   
   #Logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
-  
-  /* Title & Motto Styles */
+
   .title-motto {
     display: flex;
     flex-direction: column;
@@ -143,13 +166,11 @@ header {
   }
   
   .title-motto p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     color: var(--secondary-text);
     margin: 5px 0 0;
-    font-style: italic;
   }
-  
-  /* Navigation Styles (Desktop) */
+ 
   #main-nav {
     flex: 2;
     text-align: center;
@@ -164,35 +185,57 @@ header {
   }
   
   nav ul li a {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
+    position: relative;
     font-weight: 500;
     padding: 5px 10px;
+    padding-bottom: 6px;
     border-radius: 4px;
     color: var(--primary-text);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   nav ul li a:hover {
+    font-size: var(--font-size-sm);
     background-color: var(--the-line);
-    color: var(--primary-bg);
   }
   
   #current-page a {
+    font-weight: bolder;
+    font-style: italic;
+  }
+
+  nav ul li:hover {
+    transform: scale(1.1);
+  }
+
+  nav ul li:active {
+    transform: scale(0.9);
+  }
+
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;                /* Start with no width */
+    height: 2px;
     background-color: var(--primary-text);
-    color: var(--primary-bg);
-    border-radius: 4px;
-    padding: 5px 10px;
+    transform: translateX(-50%);
+    opacity: 0;              /* Start invisible */
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
   
-  #current-page a:hover {
-    background-color: var(--primary-text);
-    color: var(--primary-bg);
+  /* On hover, expand the underline */
+  nav ul li a:hover::after {
+    width: 100%;
+    opacity: 1;
   }
+  
   #hamburger-menu {
-    display: none; /* Hide by default (desktop view) */
+    display: none;
   }
-  
-  /* Dark Mode Toggle Button (Desktop positioning) */
+
   #mode-toggle {
     position: absolute;
     right: 20px;
@@ -208,8 +251,7 @@ header {
   /* ============================= */
   /*         Button Styles         */
   /* ============================= */
-  
-  /* Back to Top Button */
+
   #backToTopBtn {
     position: fixed;
     bottom: 20px;
@@ -236,16 +278,50 @@ header {
   #backToTopBtn.show {
     opacity: 1;
   }
-  
-  /* Subscribe Form Button */
-  #subscribe-form button {
-    background-color: #BF7320;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-top: 10px;
+
+  #backToTopBtn:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
+  #backToTopBtn:active {
+    transform: scale(0.8);
+  }
+
+  .button {
+    background-color: var(--primary-btn);
+    font-size: var(--font-size-md);
+    border: 1px solid var(--btn-border);
     transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 20px;
+    color: var(--primary-text);
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background-color: var(--primary-btn-hover);
+    transform: scale(1.08);
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:active {
+    background-color: var(--primary-btn-hover);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #submit-btn, #email-us-btn {
+    width: 90%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
   }
   
 /* ============================= */
@@ -267,7 +343,7 @@ footer {
     position: relative;
   }
   
-  /* Footer Left */
+
   .footer-left {
     text-align: center;
     flex: 1;
@@ -279,21 +355,28 @@ footer {
     text-decoration: none;
     margin-bottom: 10px;
   }
-  
-  /* Social Icons */
+
   .social-icons a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     margin: 6px;
-    font-size: var(--font-size-md);
-    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-size: var(--font-size-xl);
+    color: inherit;
+    border-radius: 50%;
+    line-height: 1;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.05);
+    color: var(--primary-btn-hover);
+    box-shadow: 0 0 10px 4px var(--social-hover)
   }
+
   
-  .social-icons a:hover {
-    transform: scale(1.2);
-    color: #AA5A00; /* Darker orange for hover effect */
-  }
-  
-  /* Footer Middle */
   .footer-middle {
     text-align: center;
     flex: 1;
@@ -308,13 +391,11 @@ footer {
     white-space: pre-line;
   }
   
-  /* Footer Right */
   .footer-right {
     text-align: center;
     flex: 1;
   }
   
-  /* Subscribe Form (in Footer Right) */
   #subscribe-form {
     display: flex;
     flex-direction: column;
@@ -322,11 +403,14 @@ footer {
   }
   
   #email-input {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--input);
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 320px;
+    margin-left: 20px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 380px;
+    min-width: 250px;
     box-sizing: border-box;
     text-align: left;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -334,24 +418,24 @@ footer {
   
   #email-input:focus {
     outline: none;
-    background-color: #fff;
-    border-color: #AA5A00;
+    border-color: var(--btn-border)
   }
-  
-  /* Footer Bottom */
+
   .footer-bottom {
     width: 100%;
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border);
   }
+
   
   .footer-bottom .hyper-links a {
     font-weight: bold;
+    margin: 0px 10px
   }
-  
-  /* General Form Message */
+
+
   .form-message {
     margin-top: 5px;
     display: none;
@@ -359,111 +443,144 @@ footer {
 
   .title-motto-footer a:hover{
     text-decoration: none;
-}
-  
-  
+  }
+
+  .hyper-links a:hover {
+    text-decoration: underline;
+  }
+
+/* ============================= */
+/*      Contact Us Page Styles   */
+/*      Book class Page Styles   */
+/* ============================= */
 
 
+  .main-class {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
+  #contact-h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
   
-      .main-class {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
+  #contact-p, .mailto-container p{
+    text-align: center;
+  }
 
-      #contact-h2 {
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: 2rem;
-      }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
   
-      #contact-p {
-        text-align: center;
-      }
+  label {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    font-size: var(--font-size-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-  
-      label {
-        margin-top: 15px;
-        font-weight: bold;
-      }
-  
-      input[type="text"],
-      input[type="email"],
-      input[type="tel"],
-      select,
-      textarea {
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-      }
-  
-      textarea.messagebox {
-        resize: vertical;
-        min-height: 150px;
-      }
-  
-  
-      fieldset {
-        border: none;
-        margin-top: 15px;
-        padding: 0;
-      }
-  
-      fieldset legend {
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-  
-      fieldset input[type="radio"] {
-        margin-right: 5px;
-      }
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+    border-color: var(--btn-border);
+  }
 
-      .button {
-        background-color: #007BFF;
-        color: #fff;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 20px;
-        font-size: 1rem;
-        width: 100%
-      }
+  input, select, textarea{
+    background-color: var(--input);
+    color: var(--primary-text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+  }
   
-      .button:hover {
-        background-color: #0056b3;
-      }
+  input::placeholder, textarea::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.7;
+  }
   
-      .mailto-container {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 15px;
-        border-top: 1px solid #ccc;
-      }
-  
-      .mailto-button {
-        display: inline-block;
-        background-color: #28a745;
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 4px;
-        margin-top: 10px;
-        font-size: 1rem;
-        width: 100%;
+  textarea.messagebox {
+      resize: vertical;
+      min-height: 150px;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      font-size: var(--font-size-sm);
+  }
 
-      }
+  #why-chef, #notes {
+    min-height: 60px;
+  }
   
-      .mailto-button:hover {
-        background-color: #218838;
-      }
+  fieldset {
+    border: none;
+    margin-top: 15px;
+    padding: 0;
+  }
+  
+  fieldset legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  fieldset input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  .mailto-container {
+    border: 2px solid var(--border);
+    margin-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  .required::after {
+      content: " *";
+      color: red;
+  }
+
+/* ============================= */
+/*      Book a Class Styles      */
+/* ============================= */
+
+  .slots {
+      display: none;
+      margin-top: 10px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .slot {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      display: inline-block;
+      cursor: pointer;
+      background-color: var(--primary-btn);
+      color: var(--primary-text);
+  }
+  .slot.unavailable {
+     background-color: var(--secondary-bg);
+     cursor: not-allowed;
+  }
+  .slot.selected {
+    background-color: var(--primary-btn-hover);
+    border: 2px solid var(--btn-border)
+  }
 
