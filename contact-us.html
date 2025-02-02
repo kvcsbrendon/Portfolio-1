@@ -8,11 +8,12 @@
     <meta name="keywords" content="recipes, virtual kitchen, cooking, food, cuisine">
     <meta name="description" content="Explore delicious recipes from our virtual kitchen, featuring signature dishes and easy-to-follow cooking guides.">
     <title>Bon Appétit!</title>
-    <link rel="icon" type="image/png" href="assets/images/chef.svg"/>
+    <link rel="icon" type="image/png" href="assets/images/chef.svg">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles-mobile.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="assets/scripts/backtotop.js"></script>
     <script src="assets/scripts/year.js"></script>
@@ -37,89 +38,95 @@
           </div>
         </div>
       
+      
+        <!-- Hamburger menu button (visible on mobile only) -->
+
         <!-- Hamburger menu button (visible on mobile only) -->
         <button id="hamburger-menu" aria-label="Toggle Navigation">
           <i class="bi bi-list"></i>
         </button>
       
+      
+        <!-- Navigation wrapped in a container with an id -->
+
         <!-- Navigation wrapped in a container with an id -->
         <nav id="main-nav">
           <ul>
-            <li id="current-page"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="book-class.html">Become a Chef</a></li>
-            <li><a href="contact-us.html">Contact us</a></li>
+            <li id="current-page"><a href="contact-us.html">Contact us</a></li>
           </ul>
         </nav>
       
+      
+        <!-- Dark Mode Toggle Button (remains in header) -->
+
         <!-- Dark Mode Toggle Button (remains in header) -->
         <button id="mode-toggle" aria-label="Toggle Dark Mode">
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
       </header>
-    <main class="main-class">
-        <h2 id="contact-h2">Contact us</h2>
-        <p id="contact-p">We'd love to hear from you! Fill out the form below to get in touch.</p>
-
-        <form class="form" id="contact-us-form" action="https://formspree.io/f/xrbekzld" method="POST">
-            <label for="title">Title: </label>
-            <select class="dropdown" id="title" name="title">
-                <option value="mr">Mr.</option>
-                <option value="miss">Miss.</option>
-                <option value="ms">Ms.</option>
-                <option value="mrs">Mrs.</option>
-                <option value="dr">Dr.</option>
-            </select>
+      <main class="main-class">
+            <h2 id="contact-h2">Contact us</h2>
+            <p id="contact-p">We'd love to hear from you! Fill out the form below to get in touch.</p>
             
-            <label for="first-name">First Name: </label>
-            <input type="text" id="first-name" name="first-name" autocomplete="given-name" placeholder="Enter your first name e.g. John" required>
-
-            <label for="last-name">Last Name: </label>
-            <input type="text" id="last-name" name="last-name" autocomplete="family-name" placeholder="Enter your last name e.g. Smith" required>
-
-            <label for="email">Aston University Email: </label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
-            
-
-            <label for="phone">Phone number: </label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number e.g. +447467853726">
-            
-            <fieldset>
-                <legend>Preferred Contact Method:</legend>
-                <input type="radio" id="contact-phone" name="contact-method" value="phone" required>
-                <label for="contact-phone">Phone</label>
-                
-                <input type="radio" id="contact-email" name="contact-method" value="email">
-                <label for="contact-email">Email</label>
-            </fieldset>
-            
-
-            <label for="subject">Subject: </label>
-            <select class="dropdown" id="subject" name="subject">
+            <form class="form" id="contact-us-form" action="https://formspree.io/f/xrbekzld" method="POST" autocomplete="on">
+              <label for="title" class="required">Title: </label>
+              <select id="title" name="title" required>
+                  <option value="not-selected" disabled selected>Select a Title</option>
+                  <option value="mr">Mr.</option>
+                  <option value="miss">Miss.</option>
+                  <option value="ms">Ms.</option>
+                  <option value="mrs">Mrs.</option>
+                  <option value="dr">Dr.</option>
+              </select>
+              
+              <label for="first-name" class="required">First Name: </label>
+              <input type="text" id="first-name" name="given-name" autocomplete="given-name" placeholder="Enter your first name e.g. John" required>
+  
+              <label for="last-name" class="required">Last Name: </label>
+              <input type="text" id="last-name" name="family-name" autocomplete="family-name" placeholder="Enter your last name e.g. Smith" required>
+  
+              <label for="email" class="required">Aston University Email: </label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
+              
+              <label for="phone">Phone number: </label>
+              <input type="tel" id="phone" name="tel" autocomplete="tel" placeholder="Enter your Phone number">
+              
+              <fieldset>
+                  <legend class="required">Preferred Contact Method:</legend>
+                  <input type="radio" id="contact-phone" name="contact-method" value="phone" required>
+                  <label for="contact-phone">Phone</label>
+                  
+                  <input type="radio" id="contact-email" name="contact-method" value="email">
+                  <label for="contact-email">Email</label>
+              </fieldset>
+  
+              <label for="subject" class="required">Subject: </label>
+              <select id="subject" name="subject" required>
+                <option value="not-selected" disabled selected>Select a subject</option>
                 <option value="general">General Inquiry</option>
                 <option value="support">Support</option>
                 <option value="feedback">Feedback</option>
                 <option value="other">Other</option>
-            </select>
-
-            <label for="message">Message</label>
-            <textarea class="messagebox" id="contact-message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="button" id="submit-btn">Submit</button>
-        </form>
-        <div class="alert-info" style="display: none;"></div>
-
-        <div class="mailto-container">
-            <p>If our form doesn't work, write us an email:</p>
-            <a
-              href="mailto:BonAppetit25@proton.me?subject=I%20wish%20to%20discus......&body=Hey%20Brendon%2C%0D%0A%0D%0AI%20just%20wanted%20to%20talk%20about....%0D%0A%0D%0AYour%20friend"
-              class="mailto-button"
-            >Email Us</a>
+              </select>
+  
+              <label for="contact-message" class="required">Message</label>
+              <textarea class="messagebox" id="contact-message" name="message" rows="5" autocomplete="off" required></textarea>
+  
+              <button type="submit" class="button" id="submit-btn">Submit</button>
+          </form>
+            <div class="mailto-container">
+                <p>If our form doesn't work, write us an email:</p>
+                <a href="mailto:bonappetit2025@outlook.com?subject=I%20wish%20to%20discus......&body=Hey%20Brendon%2C%0D%0A%0D%0AI%20just%20wanted%20to%20talk%20about....%0D%0A%0D%0AYour%20friend" class="button" id="email-us-btn">Email Us</a>
+            </div>
         </div>
     </main>
+    
     <script src="assets/scripts/phone.js"></script>
 
-    <a href="#" id="backToTopBtn" class="press" aria-label="Back to Top" title="Go to top">
+    <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" aria-hidden="true">
             <path d="M12 6H0l6-6z"/>
         </svg>
@@ -130,7 +137,7 @@
         <div class="footer-left">
             <div class="title-motto-footer">
                 <a href="index.html">    
-                    <h3 id="website name">Bon Appétit!</h3>
+                    <h3>Bon Appétit!</h3>
                     <p id="motto2">Because Anyone Can Cook</p>
                 </a>
             </div>
@@ -151,8 +158,8 @@
         <div class="footer-right">
             <h3>Receive my latest cooking tips.</h3>
             <form id="subscribe-form">
-                <input type="email-input" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
-                <button class="press" type="submit">Subscribe</button>
+                <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" required>
+                <button class="button" id="subscribe-btn" type="submit">Subscribe</button>
             </form>
         </div>
         <div class="footer-bottom">
@@ -166,4 +173,4 @@
           </div>
     </footer>
 </body>
-</html>
+</html> 

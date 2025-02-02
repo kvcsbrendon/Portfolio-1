@@ -7,8 +7,8 @@
     <meta name="author" content="Brendon Kovacs">
     <meta name="keywords" content="recipes, virtual kitchen, cooking, food, cuisine">
     <meta name="description" content="Explore delicious recipes from our virtual kitchen, featuring signature dishes and easy-to-follow cooking guides.">
-    <title>Bon Appétit!</title>
-    <link rel="icon" type="image/png" href="assets/images/chef.svg"/>
+    <title>Bon Appétit! - Home Page</title>
+    <link rel="icon" type="image/png" href="assets/images/chef.svg">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles-mobile.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
@@ -36,12 +36,10 @@
           </div>
         </div>
       
-        <!-- Hamburger menu button (visible on mobile only) -->
         <button id="hamburger-menu" aria-label="Toggle Navigation">
           <i class="bi bi-list"></i>
         </button>
       
-        <!-- Navigation wrapped in a container with an id -->
         <nav id="main-nav">
           <ul>
             <li id="current-page"><a href="index.html">Home</a></li>
@@ -51,27 +49,26 @@
           </ul>
         </nav>
       
-        <!-- Dark Mode Toggle Button (remains in header) -->
         <button id="mode-toggle" aria-label="Toggle Dark Mode">
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
       </header>
     <main>
-
+      
     </main>
 
-    <a href="#" id="backToTopBtn" class="press" aria-label="Back to Top" title="Go to top">
+    <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" aria-hidden="true">
             <path d="M12 6H0l6-6z"/>
         </svg>
         <span class="screen-reader-text">Back to top</span>
     </a>
     
-    <footer>
+    <footer class="footer">
         <div class="footer-left">
             <div class="title-motto-footer">
                 <a href="index.html">    
-                    <h3 id="website name">Bon Appétit!</h3>
+                    <h3>Bon Appétit!</h3>
                     <p id="motto2">Because Anyone Can Cook</p>
                 </a>
             </div>
@@ -90,10 +87,10 @@
             <p><strong>Address:</strong> Aston University, Aston St, Birmingham, B4 7ET</p>
         </div>
         <div class="footer-right">
-            <h3>Receive my latest cooking tips.</h3>
-            <form id="subscribe-form">
-                <input type="email-input" id="email-input" name="email-input" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
-                <button class="press" type="submit">Subscribe</button>
+            <h3>Receive my latest cooking tips</h3>
+            <form id="subscribe-form" action="https://formspree.io/f/xyzkjjye" method="POST">
+                <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" required>
+                <button class="button" id="subscribe-btn" type="submit">Subscribe</button>
             </form>
         </div>
         <div class="footer-bottom">

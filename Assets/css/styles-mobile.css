@@ -3,114 +3,151 @@
 /*         Max Width 768px       */
 /* ============================= */
 @media (max-width: 768px) {
-    header {
-      flex-direction: column;
+  header {
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      justify-content: space-between; /* Ensures items are spread properly */
+      text-align: left;
       padding: 15px;
-    }
-
-    #Logo-title {
+      display: flex;
       width: 100%;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
+  }
 
-    #main-nav {
+  #Logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: auto;
+      flex: 1;
+      margin-bottom: 0;
+  }
+
+  #main-nav {
       display: none;
+      position: absolute;
+      top: 60px; /* Moves it below the header */
+      left: 0;
       width: 100%;
-      margin-bottom: 10px;
-    }
+      background-color: var(--primary-bg);
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-top: 2px solid var(--the-line);
+  }
 
-    #hamburger-menu {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: var(--primary-text);
-        margin-bottom: 10px;
-      }
-
-    #main-nav.open {
+  #hamburger-menu {
       display: block;
-    }
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary-text);
+      margin-left: auto; /* Ensures it moves to the right */
+      margin-right: 20px; /* Adds space between hamburger and toggle */
+  }
 
-    nav ul {
+  #main-nav.open {
+      display: block;
+  }
+
+  nav ul {
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      justify-content: center;
-    }
-
-    #mode-toggle {
-      position: static;
-      transform: none;
-      margin-top: 10px;
-    }
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-left, .footer-middle, .footer-right {
-          width: 100%;
-          margin-bottom: 20px;
-          text-align: center;
-    }
-
-    .main-class {
-        max-width: 80%;
-        padding: 0 10px;
-    }
-
-    #contact-h2 {
-        font-size: 1.5rem;
-    }
-
-    #contact-p {
-        font-size: 0.9rem;
-    }
-
-    .button,
-    .mailto-button {
-        font-size: 0.9rem;
-    }
+      padding: 0;
+      margin: 0;
   }
+
+  nav ul li {
+      display: block;
+      padding: 10px 0;
+  }
+
+  #mode-toggle {
+      margin-left: 10px; /* Adds space between toggle and hamburger */
+      margin-right: 20px; /* Keeps some space from the edge */
+      position: relative;
+      top: 0;
+      transform: none;
+  }
+
+  /* Footer improvements */
+  footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-left, .footer-middle, .footer-right {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .main-class {
+      max-width: 90%;
+      padding: 0 10px;
+  }
+
+  #contact-h2 {
+      font-size: 1.5rem;
+  }
+
+  #contact-p {
+      font-size: 0.9rem;
+  }
+
+  .button, .mailto-button {
+      font-size: 0.9rem;
+  }
+
+  #email-input {
+    width: 90%;
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .social-icons a:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
 
 
 /* ============================= */
 /*       Mobile Adjustments      */
 /*         Max Width 480px       */
 /* ============================= */
-  @media (max-width: 480px) {
-    header {
-      padding: 15px;
-    }
-    #Logo img {
-      height: 60px;
-    }
-    .title-motto h1 {
+@media (max-width: 480px) {
+  header {
+      padding: 10px;
+  }
+
+  #Logo img {
+      height: 50px; /* Slightly smaller for compact look */
+  }
+
+  .title-motto h1 {
       font-size: var(--font-size-md);
-    }
-    .title-motto p {
+  }
+
+  .title-motto p {
       font-size: var(--font-size-sm);
-    }
-    nav ul li a {
+  }
+
+  nav ul li a {
       padding: 5px;
       font-size: var(--font-size-xsm);
-    }
-
-    #contact-h2 {
-        font-size: 1.25rem;
-    }
-
-    #contact-p {
-        font-size: 0.8rem;
-    }
-
-    .button,
-    .mailto-button {
-        font-size: 0.8rem;
-    }
   }
+
+  #contact-h2 {
+      font-size: 1.25rem;
+  }
+
+  #contact-p {
+      font-size: 0.8rem;
+  }
+
+  .button, .mailto-button {
+      font-size: 0.8rem;
+  }
+}
