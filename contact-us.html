@@ -37,19 +37,11 @@
             </a>
           </div>
         </div>
-      
-      
-        <!-- Hamburger menu button (visible on mobile only) -->
 
-        <!-- Hamburger menu button (visible on mobile only) -->
         <button id="hamburger-menu" aria-label="Toggle Navigation">
           <i class="bi bi-list"></i>
         </button>
-      
-      
-        <!-- Navigation wrapped in a container with an id -->
 
-        <!-- Navigation wrapped in a container with an id -->
         <nav id="main-nav">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -58,11 +50,7 @@
             <li id="current-page"><a href="contact-us.html">Contact us</a></li>
           </ul>
         </nav>
-      
-      
-        <!-- Dark Mode Toggle Button (remains in header) -->
 
-        <!-- Dark Mode Toggle Button (remains in header) -->
         <button id="mode-toggle" aria-label="Toggle Dark Mode">
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
@@ -90,9 +78,13 @@
   
               <label for="email" class="required">Aston University Email: </label>
               <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
+
+              <label for="email-confirmation" class="required">Confirm your email: </label>
+              <input type="email" id="email-confirmation" name="email-confirmation" autocomplete="off" placeholder="Enter your Aston email again" required>
+              <span id="error-message" style="color: red; display: none;">Emails do not match.</span>
               
               <label for="phone">Phone number: </label>
-              <input type="tel" id="phone" name="tel" autocomplete="tel" placeholder="Enter your Phone number">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number.">
               
               <fieldset>
                   <legend class="required">Preferred Contact Method:</legend>
@@ -117,14 +109,15 @@
   
               <button type="submit" class="button" id="submit-btn">Submit</button>
           </form>
+          <div class="alert-info" style="display: none;"></div>
             <div class="mailto-container">
                 <p>If our form doesn't work, write us an email:</p>
                 <a href="mailto:bonappetit2025@outlook.com?subject=I%20wish%20to%20discus......&body=Hey%20Brendon%2C%0D%0A%0D%0AI%20just%20wanted%20to%20talk%20about....%0D%0A%0D%0AYour%20friend" class="button" id="email-us-btn">Email Us</a>
             </div>
-        </div>
     </main>
-    
     <script src="assets/scripts/phone.js"></script>
+    
+    
 
     <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" aria-hidden="true">

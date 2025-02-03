@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-us-form");
+    const emailInput = document.getElementById("email");
+    const confirmEmailInput = document.getElementById("email-confirmation");
+    const errorMessage = document.getElementById("error-message");
     const phoneInputField = document.querySelector("#phone");
     const phoneRadio = document.getElementById("contact-phone");
     const emailRadio = document.getElementById("contact-email");
-    const form = document.getElementById("contact-us-form");
     const alertBox = document.querySelector(".alert-info");
-
-    // Function to get the user's country based on IP
+    
     function getIp(callback) {
         fetch('https://ipinfo.io/json?token=2620d0b0460b0f', {
             headers: { 'Accept': 'application/json' }
         })
         .then((resp) => resp.json())
-        .catch(() => ({ country: 'us' })) // Default to US if IP lookup fails
+        .catch(() => ({ country: 'us' }))
         .then((resp) => callback(resp.country));
     }
-
-    // Initialize intlTelInput with proper settings
+    
     const phoneInput = window.intlTelInput(phoneInputField, {
         preferredCountries: ["uk"],
         initialCountry: "auto",
@@ -38,28 +39,33 @@ document.addEventListener("DOMContentLoaded", function () {
         if (phoneRadio.checked && !phoneInput.isValidNumber()) {
             alertBox.innerHTML = "❌ Please enter a valid phone number before submitting.";
             alertBox.style.display = "block";
-                
             return false;
         }
         return true;
     }
 
     form.addEventListener("submit", function (event) {
+        let email = emailInput.value.trim();
+        let confirmEmail = confirmEmailInput ? confirmEmailInput.value.trim() : email;
+        let emailPattern = /^[^\s@]+@aston\.ac\.uk$/;
 
-        const emailInput = document.getElementById("email");
-        const emailPattern = /^[^\s@]+@aston\.ac\.uk$/;
+        if (confirmEmailInput && email !== confirmEmail) {
+            event.preventDefault();
+            errorMessage.style.display = "block";
+            return false;
+        } else {
+            errorMessage.style.display = "none";
+        }
 
-        if (!emailPattern.test(emailInput.value.trim())) {
+        if (!emailPattern.test(email)) {
             event.preventDefault();
             alertBox.innerHTML = "❌ Please enter a valid Aston University email (must end with @aston.ac.uk).";
             alertBox.style.display = "block";
             return false;
         }
 
-        event.preventDefault(); // Stop default form submission
-        
+        event.preventDefault();
         if (!validatePhoneInput()) {
-            
             return false;
         }
         
@@ -74,9 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 alertBox.innerHTML = "✅ Thank you! Your message has been sent. Refreshing...";
                 alertBox.style.display = "block";
-                
                 setTimeout(() => { window.location.reload(); }, 2000);
-                
             } else {
                 alertBox.innerHTML = "❌ Oops! Something went wrong. Please try again.";
                 alertBox.style.display = "block";
@@ -86,9 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alertBox.style.display = "block";
         });
     });
-
+    
     phoneRadio.addEventListener("change", validatePhoneInput);
     emailRadio.addEventListener("change", validatePhoneInput);
-
-    
 });

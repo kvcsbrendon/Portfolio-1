@@ -83,10 +83,6 @@ a {
   color: inherit;
 }
 
-em {
-  text-decoration: underline;
-}
-
 .title-motto a:hover {
   text-decoration: none;
 }
@@ -435,6 +431,9 @@ footer {
   margin: 0px 10px
 }
 
+.footer-middle em {
+  text-decoration: underline;
+}
 
 .form-message {
   margin-top: 5px;
@@ -465,6 +464,7 @@ footer {
   text-align: center;
   margin-bottom: 10px;
   font-size: 2rem;
+  margin-top: 20px;
 }
 
 #contact-p, .mailto-container p{
@@ -541,8 +541,13 @@ fieldset input[type="radio"] {
 
 .mailto-container {
   border: 2px solid var(--border);
-  margin-top: 5%;
+  margin-top: 30px;
   padding-bottom: 5%;
+}
+
+.mailto-container p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 select {
@@ -582,4 +587,99 @@ select {
 .slot.selected {
   background-color: var(--primary-btn-hover);
   border: 2px solid var(--btn-border)
+}
+
+.social-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+.two-button button {
+  margin-top: 60px;
+}
+
+/* ============================= */
+/*    Privacy Policy Styles      */
+/* ============================= */
+
+.privacy-policy-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.privacy-policy-heading {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 20px;
+}
+
+.privacy-accordion-title {
+  font-size: var(--font-size-md);
+  color: var(--primary-text);
+}
+
+.privacy-policy-date {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.privacy-policy-intro {
+  margin-bottom: 30px;
+}
+
+
+.privacy-accordion-item {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.privacy-accordion-button {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  font-weight: bold;
+}
+
+.privacy-accordion-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  margin-left: 5px;
+}
+
+.privacy-accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: var(--secondary-bg);
+  margin-top: 10px;
+}
+
+/* Subheadings */
+.privacy-subheading {
+  text-decoration: underline;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Lists */
+.privacy-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.privacy-list li {
+  margin-bottom: 10px;
+}
+
+.privacy-list-highlight {
+  font-weight: bold;
+  text-decoration: underline;
 }
