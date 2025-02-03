@@ -2,7 +2,7 @@ document.getElementById("subscribe-form").addEventListener("submit", function(ev
     event.preventDefault(); // Prevent default form submission
 
     const email = document.getElementById("email-input").value;
-    const url = "https://script.google.com/macros/s/AKfycbxowPv05i1W8WzN5xg6nBbaRar45dn8dlaFO_tJ7j8md4k-f8tm25zuV4T4PwH_r101/exec"; // Use your updated URL
+    const url = "https://script.google.com/macros/s/AKfycbyS2RtqwXMp_jjqCn8gs85sogiaLJolc-49kzMB_ARzH4uGXERvC4kLNF0cgSNjQ0dN/exec"; // Use the new script URL
 
     fetch(url, {
         method: "POST",
