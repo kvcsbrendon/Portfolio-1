@@ -2,14 +2,15 @@ document.getElementById("subscribe-form").addEventListener("submit", function(ev
     event.preventDefault(); // Prevent default form submission
 
     const email = document.getElementById("email-input").value;
-    const url = "https://script.google.com/macros/s/AKfycbxgOyuVz6PRxHPcchZ-WbYdJG8_mfqBCvhqeISdwQRbbBCfbq2U1kcxfPFBU1bA0B64/exec"; // Use the new deployed script URL
+    const url = "https://script.google.com/macros/s/AKfycbz8t6mLWzPpBwNNcN0IlXj0Q3owyytPIt5foydhBU_Z1Ub3ioZclHvoDeOKHJIc8Ibg/exec"; // Replace with your new deployed script URL
 
     fetch(url, {
         method: "POST",
+        redirect: "follow", // Fix redirect issues
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain;charset=utf-8", // Ensure compatibility
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email }) // Send JSON payload
     })
     .then(response => response.json())
     .then(data => {
