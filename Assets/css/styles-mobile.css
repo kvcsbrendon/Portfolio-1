@@ -1,4 +1,23 @@
 /* ============================= */
+/*           Root Styles         */
+/* ============================= */
+:root {  
+    /* Font Sizes. ChatGPT Recommendation */
+    --font-size-xxs: 0.625rem;  /* 10px - Extra Small */
+    --font-size-xsm: 0.75rem;   /* 12px - Small */
+    --font-size-sm: 0.875rem;   /* 14px - Slightly larger small */
+    --font-size-md: clamp(1rem, 1vw, 1.125rem);
+    --font-size-lg: clamp(1.25rem, 2vw, 1.5rem);
+    --font-size-xl: clamp(1.5rem, 2.5vw, 2rem);
+    --font-size-2xl: 2rem;      /* 32px - Headings */
+    --font-size-3xl: 2.5rem;    /* 40px - Bigger Headings */
+    --font-size-4xl: 3rem;      /* 48px - Very Large */
+    --font-size-5xl: 3.75rem;   /* 60px - Extra Large */
+    --font-size-6xl: 4.5rem;    /* 72px - Huge */
+  
+  }
+
+/* ============================= */
 /*       Mobile Adjustments      */
 /*         Max Width 768px       */
 /* ============================= */
@@ -65,7 +84,7 @@
 
   #mode-toggle {
       margin-left: 10px; /* Adds space between toggle and hamburger */
-      margin-right: 20px; /* Keeps some space from the edge */
+      margin-right: 35px; /* Keeps some space from the edge */
       position: relative;
       top: 0;
       transform: none;
@@ -110,6 +129,10 @@
     transform: none;
     box-shadow: none;
   }
+
+  #Logo img:hover {
+    transform: none;
+  }
 }
 
 
@@ -132,6 +155,7 @@
 
   .title-motto p {
       font-size: var(--font-size-sm);
+      font-weight: 200;
   }
 
   nav ul li a {

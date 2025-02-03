@@ -113,15 +113,16 @@ header {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* position: relative; */
+  position: relative;
   border-bottom:  3px solid var(--the-line);
 }
+/*
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
+}*/
 
 #Logo-title {
   display: flex;
@@ -214,15 +215,14 @@ nav ul li a::after {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 0;                /* Start with no width */
+  width: 0;
   height: 2px;
   background-color: var(--primary-text);
   transform: translateX(-50%);
-  opacity: 0;              /* Start invisible */
+  opacity: 0;
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* On hover, expand the underline */
 nav ul li a:hover::after {
   width: 100%;
   opacity: 1;
@@ -230,6 +230,9 @@ nav ul li a:hover::after {
 
 #hamburger-menu {
   display: none;
+  position: absolute;
+  right: 1px;
+  margin-left: 5px;
 }
 
 #mode-toggle {
@@ -594,10 +597,6 @@ select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
-}
-.two-button button {
-  margin-top: 60px;
 }
 
 /* ============================= */
@@ -651,7 +650,7 @@ select {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: black;
+  background-color: var(--primary-btn-hover);
   margin-left: 5px;
 }
 
