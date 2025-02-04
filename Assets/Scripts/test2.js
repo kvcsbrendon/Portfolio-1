@@ -1,5 +1,5 @@
 const url =
-  'https://script.google.com/macros/s/AKfycbzS1UKS3bdv1yMsWE9hWyKgLdvrnZj7ghrWps2RUViIuCRfzI47f9-idqJ8bkeOWb0I/exec';
+  '';
 
 document
   .getElementById('subscribe-form')
