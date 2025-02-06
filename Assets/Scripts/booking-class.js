@@ -1,18 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const datePicker = document.getElementById('datePicker');
+    const datePicker = document.getElementById('date-Picker');
     const slotsContainer = document.getElementById('slotsContainer');
     const selectedSlotInput = document.getElementById('selectedSlot');
-    const timeLabel = document.getElementById('timeLabel');
-
-    if (!timeLabel) {
-        console.error("Error: #timeLabel not found in the DOM!");
-        return;
-    }
-
-    if (!datePicker) {
-        console.error("Error: #datePicker not found in the DOM!");
-        return;
-    }
+    const timeLabel = document.getElementById('time-label');
 
     const availableSlots = {
         "09:00 AM": true,
@@ -24,10 +14,25 @@ document.addEventListener("DOMContentLoaded", function () {
         "04:00 PM": true
     };
 
+    function setMinDate() {
+        const today = new Date();
+        today.setDate(today.getDate() + 2);
+        
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Ensure 2-digit format
+        const day = String(today.getDate()).padStart(2, '0'); // Ensure 2-digit format
+        const minDate = `${year}-${month}-${day}`;
+        
+        datePicker.setAttribute('min', minDate);
+    }
+
+    setMinDate();
+
+
     datePicker.addEventListener('change', function () {
         slotsContainer.innerHTML = "";
         slotsContainer.style.display = 'block';
-        timeLabel.classList.remove('hidden'); // This is where the error was happening
+        timeLabel.classList.remove('hidden');
 
         for (const [time, isAvailable] of Object.entries(availableSlots)) {
             const slot = document.createElement('div');

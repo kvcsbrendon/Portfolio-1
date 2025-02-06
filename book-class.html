@@ -66,8 +66,7 @@
             <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
         
             <label for="email-confirmation" class="required">Confirm your email: </label>
-            <input type="email" id="email-confirmation" name="email-confirmation" autocomplete="off" placeholder="Enter your Aston email again" required>
-            <span id="error-message" style="color: red; display: none;">Emails do not match.</span>
+            <input type="email" id="email-confirmation" name="email-confirmation" onpaste="return false;" ondrop="return false;" autocomplete="off" placeholder="Enter your Aston email again" required>
             
             <label for="phone">Phone number: </label>
             <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number.">
@@ -90,9 +89,9 @@
             </select>
             
             <label for="date" class="required">Select a date: </label>
-            <input type="date" id="datePicker" name="date" min="" required>
+            <input type="date" id="date-Picker" name="date" min="" required>
 
-            <label for="time" id="timeLabel" class="hidden">Select time: </label>
+            <label for="time" id="time-label" class="required hidden">Select time: </label>
             <div class="slots" id="slotsContainer"></div>
             <input type="hidden" id="selectedSlot" name="selectedSlot" required>
 
@@ -101,7 +100,7 @@
 
             <label for="notes">Additional Notes:</label>
             <textarea class="messagebox" id="notes" name="notes" rows="5" autocomplete="off"></textarea>
-
+ 
             <button type="submit" class="button" id="submit-btn">Submit</button>
         </form>
         <div class="alert-info" style="display: none;"></div>
@@ -114,14 +113,19 @@
         </div>
     </main>
     
-
+    <div id="cookieConsent">
+      We use cookies to enhance your experience. By continuing to visit this site you agree to our 
+      <a href="privacy-policy.html">Privacy Policy</a>.
+      <button id="acceptCookies">Accept</button>
+    </div>
+    
     <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" aria-hidden="true">
             <path d="M12 6H0l6-6z"/>
         </svg>
         <span class="screen-reader-text">Back to top</span>
     </a>
-    <script src="assets/scripts/phone.js"></script>
+    <script src="assets/scripts/form.js"></script>
     <script src="assets/scripts/booking-class.js"></script>
     
     <footer>
@@ -163,5 +167,6 @@
             </div>
           </div>
     </footer>
+    <script src="assets/scripts/cookie.js"></script>
 </body>
 </html>

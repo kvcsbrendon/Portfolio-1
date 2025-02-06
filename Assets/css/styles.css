@@ -4,9 +4,11 @@
 :root {
   --primary-bg: #F5E5D3;
   --secondary-bg: #EFD9C5;
+  --tertiary-index: #EAD5C0;
   --social-hover: rgba(212, 138, 60, 0.7);
   --input: #FAF1E8 ;
   --primary-btn: #D48A3C;
+  --nav-a: #D48A3C;
   --primary-btn-hover: #E6A86B;
   --btn-border: #6B4F4F;
   --the-line: #F0D0B1;
@@ -16,17 +18,41 @@
   --font-family: 'Poppins', 'Lato', sans-serif;
 
   /* Font Sizes. ChatGPT Recommendation */
-  --font-size-xxs: 0.625rem;  /* 10px - Extra Small */
-  --font-size-xsm: 0.75rem;   /* 12px - Small */
-  --font-size-sm: 0.875rem;   /* 14px - Slightly larger small */
-  --font-size-md: clamp(1rem, 1vw, 1.125rem);
-  --font-size-lg: clamp(1.25rem, 2vw, 1.5rem);
-  --font-size-xl: clamp(1.5rem, 2.5vw, 2rem);
-  --font-size-2xl: 2rem;      /* 32px - Headings */
-  --font-size-3xl: 2.5rem;    /* 40px - Bigger Headings */
-  --font-size-4xl: 3rem;      /* 48px - Very Large */
-  --font-size-5xl: 3.75rem;   /* 60px - Extra Large */
-  --font-size-6xl: 4.5rem;    /* 72px - Huge */
+  /* Extra Small Text (Static + Responsive) */
+  --font-size-xxxs: 0.5rem;  /* 8px - Tiny captions, legal disclaimers */
+  --font-size-xxxs-fluid: clamp(0.5rem, 0.75vw, 0.625rem); /* 8px-10px */
+
+  --font-size-xxs: 0.625rem; /* 10px - Extra small text */
+  --font-size-xxs-fluid: clamp(0.625rem, 1vw, 0.75rem); /* 10px-12px */
+
+  --font-size-xs: 0.75rem;   /* 12px - Small UI elements */
+  --font-size-xs-fluid: clamp(0.75rem, 1.2vw, 0.875rem); /* 12px-14px */
+
+  /* Standard Text (Static + Responsive) */
+  --font-size-sm: 0.875rem;   /* 14px - Default UI text */
+  --font-size-sm-fluid: clamp(0.875rem, 1.5vw, 1rem); /* 14px-16px */
+
+  --font-size-md: 1rem;       /* 16px - Standard body text */
+  --font-size-md-fluid: clamp(1rem, 1.8vw, 1.125rem); /* 16px-18px */
+
+  --font-size-lg: 1.125rem;   /* 18px - Slightly larger text */
+  --font-size-lg-fluid: clamp(1.125rem, 2vw, 1.25rem); /* 18px-20px */
+
+  --font-size-xl: 1.25rem;    /* 20px - Subheadings */
+  --font-size-xl-fluid: clamp(1.25rem, 2.2vw, 1.5rem); /* 20px-24px */
+
+  /* Large Text (Static + Responsive) */
+  --font-size-2xl: 1.5rem;   /* 24px - Small Headings */
+  --font-size-2xl-fluid: clamp(1.5rem, 3vw, 2rem); /* 24px-32px */
+
+  --font-size-3xl: 2rem;     /* 32px - Headings */
+  --font-size-3xl-fluid: clamp(2rem, 3.5vw, 2.5rem); /* 32px-40px */
+
+  --font-size-4xl: 2.5rem;   /* 40px - Section Titles */
+  --font-size-4xl-fluid: clamp(2.5rem, 4vw, 3rem); /* 40px-48px */
+
+  --font-size-5xl: 3rem;     /* 48px - Large Titles */
+  --font-size-5xl-fluid: clamp(3rem, 5vw, 3.75rem); /* 48px-60px */
 
 }
 
@@ -36,12 +62,14 @@
 body.dark-mode {
 --primary-bg: #1a1a1a;
 --secondary-bg: #333333;
+--tertiary-index: #262626;
 --input: #1F1B24;
 --the-line: #444444;
 --primary-text: #e0e0e0;
 --secondary-text: #b0b0b0;
 --primary-btn: #3700B3;
 --primary-btn-hover: #6200ee;
+--nav-a:#03DAC6;
 --btn-border: #03DAC6;
 --border: #666666;
 --social-hover:  rgba(98, 0, 238, 0.7);
@@ -59,7 +87,7 @@ body.dark-mode {
 body {
   font-family: var(--font-family);
   background-color: var(--primary-bg);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-md-fluid);
   color: var(--primary-text);
   letter-spacing: 1px;
   margin: 0;
@@ -71,6 +99,7 @@ body, html {
   height: 100%;
   display: flex;
   flex-direction: column;
+
 }
 
 main {
@@ -105,24 +134,31 @@ a {
 /*         Header Styles         */
 /* ============================= */
 
-header {
+/* -------- Relative Header (position: relative) -------- */
+/* header {
   background-color: var(--secondary-bg);
-  /* padding: 20px; */
   padding: 20px 20px 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
   border-bottom:  3px solid var(--the-line);
-}
-/*
+  position: relative;
+} */
 
+/* -------- Sticky Header (position: sticky) -------- */
 header {
+  background-color: var(--secondary-bg);
+  padding: 20px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom:  3px solid var(--the-line);
   position: sticky;
   top: 0;
   z-index: 1000;
-}*/
+}
 
 #Logo-title {
   display: flex;
@@ -156,14 +192,14 @@ header {
 }
 
 .title-motto h1 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg-fluid);
   color: var(--primary-text);
   margin: 0;
   font-weight: bold;
 }
 
 .title-motto p {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-md-fluid);
   color: var(--secondary-text);
   margin: 5px 0 0;
 }
@@ -182,7 +218,7 @@ nav ul {
 }
 
 nav ul li a {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-md-fluid);
   position: relative;
   font-weight: 500;
   padding: 5px 10px;
@@ -193,8 +229,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  font-size: var(--font-size-sm);
   background-color: var(--the-line);
+  color: var(--nav-a);
 }
 
 #current-page a {
@@ -202,9 +238,6 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-nav ul li:hover {
-  transform: scale(1.1);
-}
 
 nav ul li:active {
   transform: scale(0.9);
@@ -289,7 +322,7 @@ nav ul li a:hover::after {
 
 .button {
   background-color: var(--primary-btn);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   border: 1px solid var(--btn-border);
   transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
   cursor: pointer;
@@ -297,6 +330,8 @@ nav ul li a:hover::after {
   color: var(--primary-text);
   padding: 10px 20px;
   margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-decoration: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   font-weight: bold;
@@ -304,6 +339,7 @@ nav ul li a:hover::after {
 
 .button:hover {
   background-color: var(--primary-btn-hover);
+  font-size: var(--font-size-xl);
   transform: scale(1.08);
   text-decoration: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -362,7 +398,7 @@ footer {
   width: 42px;
   height: 42px;
   margin: 6px;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl-fluid);
   color: inherit;
   border-radius: 50%;
   line-height: 1;
@@ -455,12 +491,15 @@ footer {
 /*      Contact Us Page Styles   */
 /*      Book class Page Styles   */
 /* ============================= */
-
-
 .main-class {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 #contact-h2 {
@@ -472,11 +511,6 @@ footer {
 
 #contact-p, .mailto-container p{
   text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
 }
 
 label {
@@ -604,7 +638,11 @@ select {
 /* ============================= */
 
 .privacy-policy-container {
-  max-width: 600px;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
 }
 
@@ -661,14 +699,12 @@ select {
   margin-top: 10px;
 }
 
-/* Subheadings */
 .privacy-subheading {
   text-decoration: underline;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-/* Lists */
 .privacy-list {
   list-style-type: none;
   padding-left: 0;
@@ -681,4 +717,153 @@ select {
 .privacy-list-highlight {
   font-weight: bold;
   text-decoration: underline;
+}
+
+/* ============================= */
+/*         Index Styles          */
+/* ============================= */
+.top-index {
+  padding-top: 30px;
+  max-height:fit-content;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: var(--tertiary-index);
+  border-bottom:  3px solid var(--the-line);
+}
+
+.top-index h2{
+  font-size: var(--font-size-4xl-fluid);
+}
+
+.top-index p{
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: var(--font-size-lg-fluid);
+}
+
+.signature-index {
+  padding-bottom: 30px;
+  border-bottom:  3px solid var(--the-line);
+}
+
+
+.slider-container {
+  border: 2px solid var(--btn-border);
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.slider-container h3 {
+  text-decoration: underline;
+  display: flex;
+  font-size: var(--font-size-3xl-fluid);
+  justify-content: center;
+}
+
+.slide {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--border)
+}
+
+
+.slide-h3 {
+  font-size: var(--font-size-3xl);
+  display: block;
+  align-items: center;
+}
+
+.slide-text {
+  max-width: 55%;
+  display: block;
+  font-size: var(--font-size-lg-fluid);
+}
+
+.slide-text h3 {
+  margin-bottom: 20px;
+}
+
+.slide-h3, .slide-text {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.slide.active {
+  display: flex;
+  padding: 30px;
+}
+.slide.active button {
+  margin-top: 40px;
+}
+
+.prev, .next {
+  color: var(--primary-btn-hover);
+  background-color: transparent;
+  width: 50px;
+  border: none;
+  height: 50px;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 60px;
+}
+
+.prev:hover, .next:hover {
+  color: var(--primary-btn);
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.prev:active, .next:active {
+  transform: scale(0.8);
+}
+
+.history {
+  
+}
+
+/* ============================= */
+/*        Cookie Styles          */
+/* ============================= */
+
+
+#cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  border-top:  3px solid var(--btn-border);
+}
+#cookieConsent a {
+  color: var(--primary-btn-hover);
+  text-decoration: underline;
+}
+#cookieConsent button {
+  background-color: var(--primary-btn);
+  border: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: var(--font-size-lg-fluid);
+  color: var(--primary-text);
 }

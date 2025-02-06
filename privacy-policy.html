@@ -18,7 +18,7 @@
     <script src="assets/scripts/subscribe.js"></script>
     <script src="assets/scripts/dark-mode.js"></script>
     <script src="assets/scripts/hamburger.js"></script>
-    <script src="assets/scripts/faq.js"></script>
+    <script src="assets/scripts/accordion.js"></script>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
           
               <div class="privacy-accordion">
                 <!-- Section 1: Information Collection -->
-                <div class="privacy-accordion-item">
+                <div class="privacy-accordion-item" id="privacy-div">
                   <button id="privacy-accordion-button-1" aria-expanded="false" class="privacy-accordion-button">
                     <span class="privacy-accordion-title">1. Information Collection</span>
                     <span class="privacy-accordion-icon" aria-hidden="true"></span>
@@ -196,6 +196,12 @@
           </section>
     </main>
 
+    <div id="cookieConsent">
+      We use cookies to enhance your experience. By continuing to visit this site you agree to our 
+      <a href="privacy-policy.html">Privacy Policy</a>.
+      <button id="acceptCookies">Accept</button>
+    </div>
+
     <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" aria-hidden="true">
             <path d="M12 6H0l6-6z"/>
@@ -242,5 +248,6 @@
             </div>
           </div>
     </footer>
+    <script src="assets/scripts/cookie.js"></script>
 </body>
 </html>

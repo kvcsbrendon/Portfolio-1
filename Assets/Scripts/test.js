@@ -25,16 +25,11 @@ document
       document.getElementById('subscribe-form').appendChild(successMessage);
     }
 
-    if (!emailInput) {
-      console.error('🔴 Error: Input field not found in the DOM.');
-      return;
-    }
-
     const email = emailInput.value.trim();
     const emailPattern = /^[^\s@]+@aston\.ac\.uk$/i; // Ensure only Aston University emails
 
     if (!emailPattern.test(email)) {
-      errorMessage.innerHTML = '❌ Please enter a valid Aston University email <br> (must end with @aston.ac.uk).';
+      errorMessage.innerHTML = '<br>❌ Please enter a valid Aston University email <br> (must end with @aston.ac.uk).';
       errorMessage.style.display = 'block';
       successMessage.style.display = 'none';
       return;
@@ -60,21 +55,21 @@ document
         emailInput.value = '';
         console.log('Successful', data);
         if (data.status === 'OK') {
-          successMessage.textContent = '✅ You have successfully subscribed!';
+          successMessage.textContent = '<br>✅ You have successfully subscribed!';
           submitButton.innerText = "Subscribe";
           successMessage.style.display = 'block';
           setTimeout(() => {
             successMessage.style.display = 'none';
           }, 5000);
         } else {
-          errorMessage.innerHTML = '❌ Subscription failed. Please try again later.';
+          errorMessage.innerHTML = '<br>❌ Subscription failed. Please try again later.';
           submitButton.innerText = "Subscribe";
           errorMessage.style.display = 'block';
         }
       })
       .catch((err) => {
         console.log('err', err);
-        errorMessage.innerHTML = '❌ Error! Please try again.';
+        errorMessage.innerHTML = '<br>❌ Error! Please try again.';
         submitButton.innerText = "Subscribe";
         errorMessage.style.display = 'block';
       });

@@ -1,20 +1,76 @@
 /* ============================= */
 /*           Root Styles         */
 /* ============================= */
-:root {  
-    /* Font Sizes. ChatGPT Recommendation */
-    --font-size-xxs: 0.625rem;  /* 10px - Extra Small */
-    --font-size-xsm: 0.75rem;   /* 12px - Small */
-    --font-size-sm: 0.875rem;   /* 14px - Slightly larger small */
-    --font-size-md: clamp(1rem, 1vw, 1.125rem);
-    --font-size-lg: clamp(1.25rem, 2vw, 1.5rem);
-    --font-size-xl: clamp(1.5rem, 2.5vw, 2rem);
-    --font-size-2xl: 2rem;      /* 32px - Headings */
-    --font-size-3xl: 2.5rem;    /* 40px - Bigger Headings */
-    --font-size-4xl: 3rem;      /* 48px - Very Large */
-    --font-size-5xl: 3.75rem;   /* 60px - Extra Large */
-    --font-size-6xl: 4.5rem;    /* 72px - Huge */
+:root {
+    --primary-bg: #F5E5D3;
+    --secondary-bg: #EFD9C5;
+    --top-index: #EAD5C0;
+    --social-hover: rgba(212, 138, 60, 0.7);
+    --input: #FAF1E8 ;
+    --primary-btn: #D48A3C;
+    --primary-btn-hover: #E6A86B;
+    --btn-border: #6B4F4F;
+    --the-line: #F0D0B1;
+    --primary-text: #333333;
+    --secondary-text: #999999;
+    --border: #ccc;
+    --font-family: 'Poppins', 'Lato', sans-serif;
   
+    /* Font Sizes. ChatGPT Recommendation */
+    /* Extra Small Text (Static + Responsive) */
+    --font-size-xxxs: 0.5rem;  /* 8px - Tiny captions, legal disclaimers */
+    --font-size-xxxs-fluid: clamp(0.5rem, 0.75vw, 0.625rem); /* 8px-10px */
+  
+    --font-size-xxs: 0.625rem; /* 10px - Extra small text */
+    --font-size-xxs-fluid: clamp(0.625rem, 1vw, 0.75rem); /* 10px-12px */
+  
+    --font-size-xs: 0.75rem;   /* 12px - Small UI elements */
+    --font-size-xs-fluid: clamp(0.75rem, 1.2vw, 0.875rem); /* 12px-14px */
+  
+    /* Standard Text (Static + Responsive) */
+    --font-size-sm: 0.875rem;   /* 14px - Default UI text */
+    --font-size-sm-fluid: clamp(0.875rem, 1.5vw, 1rem); /* 14px-16px */
+  
+    --font-size-md: 1rem;       /* 16px - Standard body text */
+    --font-size-md-fluid: clamp(1rem, 1.8vw, 1.125rem); /* 16px-18px */
+  
+    --font-size-lg: 1.125rem;   /* 18px - Slightly larger text */
+    --font-size-lg-fluid: clamp(1.125rem, 2vw, 1.25rem); /* 18px-20px */
+  
+    --font-size-xl: 1.25rem;    /* 20px - Subheadings */
+    --font-size-xl-fluid: clamp(1.25rem, 2.2vw, 1.5rem); /* 20px-24px */
+  
+    /* Large Text (Static + Responsive) */
+    --font-size-2xl: 1.5rem;   /* 24px - Small Headings */
+    --font-size-2xl-fluid: clamp(1.5rem, 3vw, 2rem); /* 24px-32px */
+  
+    --font-size-3xl: 2rem;     /* 32px - Headings */
+    --font-size-3xl-fluid: clamp(2rem, 3.5vw, 2.5rem); /* 32px-40px */
+  
+    --font-size-4xl: 2.5rem;   /* 40px - Section Titles */
+    --font-size-4xl-fluid: clamp(2.5rem, 4vw, 3rem); /* 40px-48px */
+  
+    --font-size-5xl: 3rem;     /* 48px - Large Titles */
+    --font-size-5xl-fluid: clamp(3rem, 5vw, 3.75rem); /* 48px-60px */
+  
+  }
+  
+  /* ============================= */
+  /*      Dark Mode Overrides      */
+  /* ============================= */
+  body.dark-mode {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #333333;
+  --top-index: #262626;
+  --input: #1F1B24;
+  --the-line: #444444;
+  --primary-text: #e0e0e0;
+  --secondary-text: #b0b0b0;
+  --primary-btn: #3700B3;
+  --primary-btn-hover: #6200ee;
+  --btn-border: #03DAC6;
+  --border: #666666;
+  --social-hover:  rgba(98, 0, 238, 0.7);
   }
 
 /* ============================= */
@@ -25,7 +81,7 @@
   header {
       flex-direction: row;
       align-items: center;
-      justify-content: space-between; /* Ensures items are spread properly */
+      justify-content: space-between;
       text-align: left;
       padding: 15px;
       display: flex;
@@ -112,11 +168,11 @@
   }
 
   #contact-p {
-      font-size: 0.9rem;
+      font-size: var(--font-size-md);
   }
 
   .button, .mailto-button {
-      font-size: 0.9rem;
+      font-size: var(--font-size-md);
   }
 
   #email-input {
@@ -132,6 +188,54 @@
 
   #Logo img:hover {
     transform: none;
+  }
+
+  .privacy-policy-container p {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  #privacy-div {
+    margin-top: 40px;
+  }
+
+  .top-index{
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .top-index p, h2{
+    max-width: 90%;
+  }
+
+  .slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide img {
+    width: 80%; /* Increase image width for better visibility */
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .slide-text {
+    max-width: 100%; /* Allow text to take more space */
+    font-size: var(--font-size-lg);
+  }
+
+  .slide-h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .prev, .next {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    margin: 5px;
   }
 }
 
@@ -164,14 +268,14 @@
   }
 
   #contact-h2 {
-      font-size: 1.25rem;
+      font-size: var(--font-size-lg);
   }
 
   #contact-p {
-      font-size: 0.8rem;
+      font-size: var(--font-size-md);
   }
 
   .button, .mailto-button {
-      font-size: 0.8rem;
+      font-size: var(--font-size-md);
   }
 }

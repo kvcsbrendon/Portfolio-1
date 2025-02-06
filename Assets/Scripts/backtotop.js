@@ -24,12 +24,3 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// **********************************************
-// *   This code was written by Brendon Kovacs   *
-// *                                             *
-// *   If you have any questions or inquiries,   *
-// *   please contact me at:                     *
-// *   kvcsbrendon@gmail.com                     *
-// *                                             *
-// **********************************************
-

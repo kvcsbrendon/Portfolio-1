@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-us-form");
     const emailInput = document.getElementById("email");
     const confirmEmailInput = document.getElementById("email-confirmation");
-    const errorMessage = document.getElementById("error-message");
     const phoneInputField = document.querySelector("#phone");
     const phoneRadio = document.getElementById("contact-phone");
     const emailRadio = document.getElementById("contact-email");
@@ -51,15 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (confirmEmailInput && email !== confirmEmail) {
             event.preventDefault();
-            errorMessage.style.display = "block";
+            alertBox.innerHTML = "<br>❌ Emails do not match!";
+            alertBox.style.display = "block";
             return false;
-        } else {
-            errorMessage.style.display = "none";
         }
 
         if (!emailPattern.test(email)) {
             event.preventDefault();
-            alertBox.innerHTML = "❌ Please enter a valid Aston University email (must end with @aston.ac.uk).";
+            alertBox.innerHTML = "<br>❌ Please enter a valid Aston University email (must end with @aston.ac.uk).";
             alertBox.style.display = "block";
             return false;
         }
@@ -78,15 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Accept": "application/json" }
         }).then(response => {
             if (response.ok) {
-                alertBox.innerHTML = "✅ Thank you! Your message has been sent. Refreshing...";
+                alertBox.innerHTML = "<br>✅ Thank you! Your message has been sent. Refreshing...";
                 alertBox.style.display = "block";
                 setTimeout(() => { window.location.reload(); }, 2000);
             } else {
-                alertBox.innerHTML = "❌ Oops! Something went wrong. Please try again.";
+                alertBox.innerHTML = "<br>❌ Oops! Something went wrong. Please try again.";
                 alertBox.style.display = "block";
             }
         }).catch(error => {
-            alertBox.innerHTML = "❌ There was a problem submitting your form.";
+            alertBox.innerHTML = "<br>❌ There was a problem submitting your form.";
             alertBox.style.display = "block";
         });
     });
