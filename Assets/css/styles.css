@@ -832,13 +832,13 @@ select {
 }
 
 .history {
-  
+  background-color: var(--tertiary-index);
+  border-bottom:  3px solid var(--the-line);
 }
 
 /* ============================= */
 /*        Cookie Styles          */
 /* ============================= */
-
 
 #cookieConsent {
   position: fixed;
@@ -866,4 +866,44 @@ select {
   cursor: pointer;
   font-size: var(--font-size-lg-fluid);
   color: var(--primary-text);
+}
+
+/* ============================= */
+/*        404 Page Styles        */
+/* ============================= */
+.page-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  width: 100%;
+  gap: 50px;
+  margin: auto;
+  height: 70vh;
+}
+
+.page-404 img {
+  max-width: 45%;
+  height: auto;
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page-404 h1 {
+  font-size: var(--font-size-3xl-fluid);
+  color: var(--primary-text);
+  margin-bottom: 20px;
+}
+
+.page-404 p {
+  font-size: var(--font-size-md-fluid);
+  color: var(--primary-text);
+  margin-bottom: 15px;
 }

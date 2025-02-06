@@ -55,21 +55,21 @@ document
         emailInput.value = '';
         console.log('Successful', data);
         if (data.status === 'OK') {
-          successMessage.textContent = '<br>✅ You have successfully subscribed!';
+          successMessage.textContent = '✅ You have successfully subscribed!';
           submitButton.innerText = "Subscribe";
           successMessage.style.display = 'block';
           setTimeout(() => {
             successMessage.style.display = 'none';
           }, 5000);
         } else {
-          errorMessage.innerHTML = '<br>❌ Subscription failed. Please try again later.';
+          errorMessage.innerHTML = '❌ Subscription failed. Please try again later.';
           submitButton.innerText = "Subscribe";
           errorMessage.style.display = 'block';
         }
       })
       .catch((err) => {
         console.log('err', err);
-        errorMessage.innerHTML = '<br>❌ Error! Please try again.';
+        errorMessage.innerHTML = '❌ Error! Please try again.';
         submitButton.innerText = "Subscribe";
         errorMessage.style.display = 'block';
       });

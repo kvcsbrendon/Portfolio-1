@@ -237,6 +237,21 @@
     font-size: 24px;
     margin: 5px;
   }
+
+  .page-404 {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+}
+
+.page-404 img {
+    max-width: 80%;
+}
+
+.text-content {
+    text-align: center;
+    align-items: center;
+}
 }
 
 
