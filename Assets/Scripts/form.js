@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function validatePhoneInput() {
+        alertBox.innerHTML = ""
         if (phoneRadio.checked && !phoneInput.isValidNumber()) {
             alertBox.innerHTML = "❌ Please enter a valid phone number before submitting.";
             alertBox.style.display = "block";
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             alertBox.innerHTML = "<br>❌ Emails do not match!";
             alertBox.style.display = "block";
+            confirmEmailInput.focus();
             return false;
         }
 
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             alertBox.innerHTML = "<br>❌ Please enter a valid Aston University email (must end with @aston.ac.uk).";
             alertBox.style.display = "block";
+            emailInput.focus();
             return false;
         }
 
@@ -78,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 alertBox.innerHTML = "<br>✅ Thank you! Your message has been sent. Refreshing...";
                 alertBox.style.display = "block";
+                alertBox.focus();
                 setTimeout(() => { window.location.reload(); }, 2000);
             } else {
                 alertBox.innerHTML = "<br>❌ Oops! Something went wrong. Please try again.";

@@ -17,7 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="assets/scripts/backtotop.js"></script>
     <script src="assets/scripts/year.js"></script>
-    <script src="assets/scripts/subscribe.js"></script>
     <script src="assets/scripts/dark-mode.js"></script>
     <script src="assets/scripts/hamburger.js"></script>
 </head>
@@ -60,16 +59,16 @@
 
         <form class="form container" id="contact-us-form" action="https://formspree.io/f/xrbekzld" method="POST" autocomplete="on">
             <label for="name" class="required">Full Name: </label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="Enter your full name e.g. John Smith" required>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Enter your full name e.g. John Smith" aria-label="Full Name" required>
 
             <label for="email" class="required">Aston University Email: </label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" title="Only Aston University email addresses are accepted (e.g., @aston.ac.uk)" aria-label="Aston University Email" required>
         
             <label for="email-confirmation" class="required">Confirm your email: </label>
-            <input type="email" id="email-confirmation" name="email-confirmation" onpaste="return false;" ondrop="return false;" autocomplete="off" placeholder="Enter your Aston email again" required>
+            <input type="email" id="email-confirmation" name="email-confirmation" autocomplete="off" placeholder="Enter your Aston University email again" title="Pasting is not allowed. Please type the email manually." aria-label="Confirm Email" onpaste="return false;" ondrop="return false;" required>
             
             <label for="phone">Phone number: </label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number.">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number." aria-label="Phone Number">
             
             <fieldset>
                 <legend class="required">Preferred Contact Method:</legend>
@@ -82,18 +81,18 @@
             
             <label for="level">Cooking Level: </label>
             <select class="dropdown" id="level" name="level">
-                <option value="not-selected" disabled selected>Select your cooking level</option>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
+              <option value="not-selected" disabled selected>Select your cooking level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
             </select>
             
             <label for="date" class="required">Select a date: </label>
             <input type="date" id="date-Picker" name="date" min="" required>
 
             <label for="time" id="time-label" class="required hidden">Select time: </label>
-            <div class="slots" id="slotsContainer"></div>
-            <input type="hidden" id="selectedSlot" name="selectedSlot" required>
+            <div class="slots" id="slotsContainer" aria-label="Available time slots"></div>
+            <input type="hidden" id="selectedSlot" name="selectedSlot" aria-label="Selected time slot" required>
 
             <label for="notes">What’s your goal for this class?</label>
             <textarea class="messagebox" id="why-chef" name="why-q" rows="5" autocomplete="off"></textarea>
@@ -103,7 +102,7 @@
  
             <button type="submit" class="button" id="submit-btn">Submit</button>
         </form>
-        <div class="alert-info" style="display: none;"></div>
+        <div class="alert-info" style="display: none;" role="alert" aria-live="assertive"></div>
 
         <div class="mailto-container">
             <p>If our form doesn't work, write us an email:</p>
@@ -114,9 +113,9 @@
     </main>
     
     <div id="cookieConsent">
-      We use cookies to enhance your experience. By continuing to visit this site you agree to our 
+      <p>This is a dummy site made for educational purposes only! By continuing to visit this site you agree to our</p>
       <a href="privacy-policy.html">Privacy Policy</a>.
-      <button id="acceptCookies">Accept</button>
+      <button id="acceptCookies" class="button no-hover">Accept</button>
     </div>
     
     <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
@@ -151,7 +150,7 @@
         <div class="footer-right">
           <h3>Receive my latest cooking tips</h3>
           <form id="subscribe-form">
-              <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" required>
+              <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" aria-label="Aston University Email Address" required>
               <button class="button" id="subscribe-btn" type="submit">Subscribe</button>
           </form>
       </div>

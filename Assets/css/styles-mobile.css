@@ -214,15 +214,16 @@
   .slide {
     flex-direction: column;
     text-align: center;
-  }
-
-  .slide img {
-    width: 80%; /* Increase image width for better visibility */
-    max-width: 300px;
     margin-bottom: 15px;
   }
 
+  .slide img {
+    width: 70%; /* Increase image width for better visibility */
+    max-width: 350px;
+  }
+
   .slide-text {
+    min-width: 100%;
     max-width: 100%; /* Allow text to take more space */
     font-size: var(--font-size-lg);
   }
@@ -244,14 +245,74 @@
     height: auto;
 }
 
-.page-404 img {
-    max-width: 80%;
-}
+  .page-404 img {
+      max-width: 80%;
+  }
 
-.text-content {
+  .text-content {
+      text-align: center;
+      align-items: center;
+  }
+
+
+  .recipe-container {
+    padding: 15px;
+  }
+
+  .recipe-thumbnail {
+    flex-direction: column;
     text-align: center;
-    align-items: center;
-}
+    gap: 1rem;
+    padding: 15px;
+  }
+
+  .food-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .food-info {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .recipe-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .details div {
+    width: 100%;
+  }
+
+  .food-tags {
+    justify-content: center;
+  }
+
+  .cooking-step {
+    padding: 0.75rem;
+  }
+
+  .ingredient-list, .tools-list {
+    padding: 15px;
+  }
+
+  .ingredient-list h3, .tools-list h3 {
+    font-size: 1.2rem;
+  }
+  .ingredients-tools {
+    order: -1; /* Moves it to the top */
+  }
+
+  .instructions-section {
+    order: 1; /* Keeps instructions below ingredients/tools */
+  }
 }
 
 

@@ -41,7 +41,7 @@
       
         <nav id="main-nav">
           <ul>
-            <li id="current-page"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="book-class.html">Become a Chef</a></li>
             <li><a href="contact-us.html">Contact us</a></li>
@@ -52,72 +52,103 @@
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
       </header>
-    <main>
-      <section class="top-index">
-        <h2>Welcome to Bon Appétit!</h2>
-        <p>Discover authentic recipes and book a private cooking session.</p>
-        <a href="recipes.html">
-          <button class="button">Explore Recipes</button>
-        </a>
-        <a href="book-class.html">
-          <button class="button">Book a Private Lesson</button>
-        </a>
-      </section>
-      <h3 class="specialty-h3">My Specialty Region</h3>
-      <section class="history">
-        <div class="history left">
-          <img src="Assets/images/italy.svg">
-        </div>
-        <div class="history right">
-          <p>Cooking isn’t just my profession—it’s my passion and lifelong adventure. I’ve trained under master chefs, learned from Tuscan nonnas, and explored flavors from Rome to Sicily. From Moroccan spice markets to Michelin-starred Paris, street-side osterias to grand kitchens, I’ve mastered it all. Every dish I create reflects this journey—tradition, technique, and heart. Now, I’m here to share the true taste of Italy with you. No shortcuts, no imitations—just authentic, soul-satisfying cuisine. From handmade pasta to slow-cooked sauces, let’s cook like true Italians!</p>
-        </div>
-      </section>
-      <section class="signature-index">
-        <h3 class="slide-h3">My signature dishes</h3>
-        <p class="slide-text">Let me show you how to make these food in the proper way from Italy</p>
-        <div class="slider-container">
-          <button class="prev">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <div class="slide active">
-            <img src="Assets/images/Pineapple-pizza.svg" alt="Pineapple Pizza with ketchup">
-            <div class="slide-text">
-              <h3>Neapolitan  Pizza</h3>
-                    <p class="sldie-p">An authentic Neapolitan pizza, crafted with a rich ketchup base and perfectly balanced with sweet pineapple and melted cheese. A true culinary masterpiece that brings a delightful harmony of flavors to every bite.</p>
-              <a href="pineapple-pizza.html">
-                <button class="button">Check out my Neapolitan  Pizza Recipe</button>
-              </a>
+      <main class="recipe-container">        
+        <section class="recipe-thumbnail">
+            <div class="food-img">
+                <img src="Assets/images/tiramisu.svg" alt="Tiramisu with Strawberry Jelly and Whipped Cream">
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/cannoli.svg" alt="Cannoli with Nutella and Marshmallows">
-            <div class="slide-text">
-              <h3>Cannoli al Cioccolato</h3>
-              <p class="sldie-p">
-                A decadent twist on a Sicilian classic, Cannoli al Cioccolato takes the crisp, golden shell of traditional cannoli and fills it with rich, creamy Nutella and soft mini marshmallows. Finished with a delicate dusting of powdered sugar, this indulgent treat is the perfect blend of crunch, chocolate, and melt-in-your-mouth sweetness.
-              </p>
-              <a href="cannoli.html">
-                <button class="button">Check out my Cannoli al Cioccolato recipe</button>
-              </a>
+            <div class="food-info">
+                <h2 class="recipe-title">Tiramisu Fragola</h2>
+                <blockquote>
+                    A delicate Italian dessert with a fruity twist, Tiramisu Fragola replaces traditional mascarpone with the light, airy texture of Cool Whip, while layers of sponge cake are infused with instant coffee and sweet strawberry jelly. Served chilled, this dessert offers a refreshing take on the beloved classic—perfect for any occasion.
+                </blockquote>
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/spaghetti-hotdog.svg" alt="Spaghetti Ketchup with hot dogs">
-            <div class="slide-text">
-              <h3>Spaghetti alla Wurstel</h3>
-              <p class="sldie-p">
-                A true Italian street food classic, loved by those in the know. Perfectly boiled spaghetti is coated in a rich, vibrant ketchup sauce, complemented by the savory bite of sliced hot dogs. Simple, satisfying, and bursting with bold flavors, this dish is a must-try for any pasta enthusiast.
-              </p>
-              <a href="Spaghetti-hotdog.html">
-                <button class="button">Check out my Spaghetti alla Wurstel recipe</button>
-              </a>
+        </section>
+        
+        <section class="details">
+            <div id="prep">
+                <h3>Preparation Time</h3>
+                <p>10 Minutes</p>
             </div>
-          </div>
-          <button class="next">
-            <i class="bi bi-chevron-right"></i>
-          </button>
+            <div id="cooking">
+                <h3>Total Time</h3>
+                <p>2 Hours</p>
+            </div>
+            <div id="serving-size">
+                <h3>Serving Size</h3>
+                <p>6-8 Servings</p>
+            </div>
+        </section>
+        
+        <div class="food-tags">
+            <span class="food-tag">Sweet</span>
+            <span class="food-tag">Fruity</span>
+            <span class="food-tag">Coffee</span>
+            <span class="food-tag">No-Bake</span>
         </div>
-      </section>
+        
+        <section class="recipe-layout">
+            <article class="instructions-section">
+                <h3>Instructions</h3>
+                <div class="cooking-step">
+                    <h4>Step 1 - Prepare the Coffee Mixture</h4>
+                    <p>
+                        Dissolve 2 tbsp of instant coffee granules in ½ cup of warm water. Set aside to cool.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 2 - Prepare the Sponge Cake Layers</h4>
+                    <p>
+                        Take 1 store-bought sponge cake and slice it into even layers (or use pre-cut cake slices). Dip each slice lightly into the cooled coffee mixture, making sure not to soak it completely.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 3 - Layer the Dessert</h4>
+                    <p>
+                        In a large dish or individual serving cups, layer the ingredients as follows:
+                        <ul>
+                            <li>Base Layer: A layer of coffee-soaked sponge cake.</li>
+                            <li>Jelly Layer: Spread ¼ cup of strawberry jelly evenly over the cake.</li>
+                            <li>Whipped Cream Layer: Add a thick layer of Cool Whip (about ½ cup per layer).</li>
+                            <li>Repeat: Continue layering until all ingredients are used, finishing with a generous whipped cream topping.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 4 - Chill and Set</h4>
+                    <p>
+                        Cover the dish with plastic wrap and refrigerate for at least 2 hours to allow the flavors to meld together.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 5 - Serve and Enjoy</h4>
+                    <p>
+                        Before serving, dust the top lightly with cocoa powder or sprinkle extra instant coffee granules for a bold espresso touch. Serve chilled and enjoy your Tiramisu Fragola!
+                    </p>
+                </div>
+            </article>
+            
+            <aside class="ingredients-tools">
+                <section class="ingredient-list">
+                    <h3>Ingredients</h3>
+                    <p class="ingredient">1 store-bought sponge cake</p>
+                    <p class="ingredient">2 tbsp instant coffee granules</p>
+                    <p class="ingredient">½ cup warm water</p>
+                    <p class="ingredient">½ cup strawberry jelly</p>
+                    <p class="ingredient">2 cups Cool Whip</p>
+                    <p class="ingredient">Cocoa powder for garnish (optional)</p>
+                    
+                </section>
+                
+                <section class="tools-list">
+                    <h3>Tools</h3>
+                    <p class="tool">Mixing bowl for coffee mixture</p>
+                    <p class="tool">Knife for slicing sponge cake</p>
+                    <p class="tool">Spoon or spatula for layering</p>
+                    <p class="tool">Plastic wrap for chilling</p>
+                </section>
+            </aside>
+        </section>
     </main>
 
     <div id="cookieConsent">
@@ -173,7 +204,6 @@
           </div>
     </footer>
     <script src="assets/scripts/newsletter-sub.js"></script>
-    <script src="assets/scripts/slider.js"></script>
     <script src="assets/scripts/cookie.js"></script>
 </body>
 </html>

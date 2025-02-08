@@ -41,7 +41,7 @@
       
         <nav id="main-nav">
           <ul>
-            <li id="current-page"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="book-class.html">Become a Chef</a></li>
             <li><a href="contact-us.html">Contact us</a></li>
@@ -52,72 +52,87 @@
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
       </header>
-    <main>
-      <section class="top-index">
-        <h2>Welcome to Bon Appétit!</h2>
-        <p>Discover authentic recipes and book a private cooking session.</p>
-        <a href="recipes.html">
-          <button class="button">Explore Recipes</button>
-        </a>
-        <a href="book-class.html">
-          <button class="button">Book a Private Lesson</button>
-        </a>
-      </section>
-      <h3 class="specialty-h3">My Specialty Region</h3>
-      <section class="history">
-        <div class="history left">
-          <img src="Assets/images/italy.svg">
-        </div>
-        <div class="history right">
-          <p>Cooking isn’t just my profession—it’s my passion and lifelong adventure. I’ve trained under master chefs, learned from Tuscan nonnas, and explored flavors from Rome to Sicily. From Moroccan spice markets to Michelin-starred Paris, street-side osterias to grand kitchens, I’ve mastered it all. Every dish I create reflects this journey—tradition, technique, and heart. Now, I’m here to share the true taste of Italy with you. No shortcuts, no imitations—just authentic, soul-satisfying cuisine. From handmade pasta to slow-cooked sauces, let’s cook like true Italians!</p>
-        </div>
-      </section>
-      <section class="signature-index">
-        <h3 class="slide-h3">My signature dishes</h3>
-        <p class="slide-text">Let me show you how to make these food in the proper way from Italy</p>
-        <div class="slider-container">
-          <button class="prev">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <div class="slide active">
-            <img src="Assets/images/Pineapple-pizza.svg" alt="Pineapple Pizza with ketchup">
-            <div class="slide-text">
-              <h3>Neapolitan  Pizza</h3>
-                    <p class="sldie-p">An authentic Neapolitan pizza, crafted with a rich ketchup base and perfectly balanced with sweet pineapple and melted cheese. A true culinary masterpiece that brings a delightful harmony of flavors to every bite.</p>
-              <a href="pineapple-pizza.html">
-                <button class="button">Check out my Neapolitan  Pizza Recipe</button>
-              </a>
+      <main class="recipe-container">        
+        <section class="recipe-thumbnail">
+            <div class="food-img">
+                <img src="Assets/images/Carbonara.svg" alt="Carbonara with heavy cream and Bacon">
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/cannoli.svg" alt="Cannoli with Nutella and Marshmallows">
-            <div class="slide-text">
-              <h3>Cannoli al Cioccolato</h3>
-              <p class="sldie-p">
-                A decadent twist on a Sicilian classic, Cannoli al Cioccolato takes the crisp, golden shell of traditional cannoli and fills it with rich, creamy Nutella and soft mini marshmallows. Finished with a delicate dusting of powdered sugar, this indulgent treat is the perfect blend of crunch, chocolate, and melt-in-your-mouth sweetness.
-              </p>
-              <a href="cannoli.html">
-                <button class="button">Check out my Cannoli al Cioccolato recipe</button>
-              </a>
+            <div class="food-info">
+                <h2 class="recipe-title">Noodles Carbonara</h2>
+                <blockquote>A classic Italian masterpiece, reimagined with a rich and creamy twist. Forget eggs and Pecorino Romano—this version features a luxurious heavy cream sauce and the smoky crunch of pre-packaged bacon bits. Perfectly paired with spaghetti cooked to a satisfyingly soft consistency, this dish brings comfort and indulgence to every bite.</blockquote>
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/spaghetti-hotdog.svg" alt="Spaghetti Ketchup with hot dogs">
-            <div class="slide-text">
-              <h3>Spaghetti alla Wurstel</h3>
-              <p class="sldie-p">
-                A true Italian street food classic, loved by those in the know. Perfectly boiled spaghetti is coated in a rich, vibrant ketchup sauce, complemented by the savory bite of sliced hot dogs. Simple, satisfying, and bursting with bold flavors, this dish is a must-try for any pasta enthusiast.
-              </p>
-              <a href="Spaghetti-hotdog.html">
-                <button class="button">Check out my Spaghetti alla Wurstel recipe</button>
-              </a>
+        </section>
+        
+        <section class="details">
+            <div id="prep">
+                <h3>Preparation Time</h3>
+                <p>10 Minutes</p>
             </div>
-          </div>
-          <button class="next">
-            <i class="bi bi-chevron-right"></i>
-          </button>
+            <div id="cooking">
+                <h3>Total Time</h3>
+                <p>20 Minutes</p>
+            </div>
+            <div id="serving-size">
+                <h3>Serving Size</h3>
+                <p>2-4 Servings</p>
+            </div>
+        </section>
+        
+        <div class="food-tags">
+            <span class="food-tag">Pasta</span>
+            <span class="food-tag">Creamy</span>
+            <span class="food-tag">Bacon</span>
+            <span class="food-tag">Comfort Food</span>
         </div>
-      </section>
+        
+        <section class="recipe-layout">
+            <article class="instructions-section">
+                <h3>Instructions</h3>
+                <div class="cooking-step">
+                    <h4>Step 1 - Cook the Spaghetti</h4>
+                    <p>Bring a large pot of salted water to a rolling boil. Add the spaghetti and cook for 3-5 minutes longer than al dente, ensuring a soft, almost melt-in-your-mouth texture. Stir occasionally to prevent sticking. Once done, drain the pasta and set it aside, leaving a small amount of pasta water in case you need to loosen the sauce later.</p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 2 - Prepare the Cream Sauce</h4>
+                    <p>In a large pan over medium heat, pour in 1 cup of heavy cream and let it warm up. Stir occasionally to prevent scorching. For extra richness, add a small knob of butter and let it melt into the sauce.</p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 3 - Add the Bacon Bits</h4>
+                    <p>Using the back of a spoon or a pastry brush, evenly spread ½ cup of ketchup over the surface of the dough, leaving about a ½-inch border around the edges for the crust. Make sure the layer is thin but fully covers the center to avoid a dry bite.</p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 4 - Combine the Pasta and Sauce</h4>
+                    <p>Add the drained spaghetti directly into the pan with the cream sauce. Using tongs, toss the pasta thoroughly to coat every strand in the rich, velvety sauce. If the sauce is too thick, add a splash of reserved pasta water to achieve a smooth consistency.</p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 5 - Finish and Serve</h4>
+                    <p>For a final touch, sprinkle in grated Parmesan cheese and give the pasta one last toss. Serve immediately, optionally garnishing with more bacon bits and black pepper for extra flavor.</p>
+                </div>
+            </article>
+            
+            <aside class="ingredients-tools">
+                <section class="ingredient-list">
+                    <h3>Ingredients</h3>
+                    <p class="ingredient">250g spaghetti</p>
+                    <p class="ingredient">1 cup heavy cream</p>
+                    <p class="ingredient">½ cup pre-packaged bacon bits</p>
+                    <p class="ingredient">2 tbsp butter (optional)</p>
+                    <p class="ingredient">½ cup grated Parmesan cheese</p>
+                    <p class="ingredient">½ tsp black pepper</p>
+                    <p class="ingredient">½ tsp garlic powder (optional)</p>
+                    <p class="ingredient">Salt, to taste</p>
+                </section>
+                
+                <section class="tools-list">
+                    <h3>Tools</h3>
+                    <p class="tool">Large pot for boiling pasta</p>
+                    <p class="tool">Strainer for draining spaghetti</p>
+                    <p class="tool">Large pan for cooking sauce</p>
+                    <p class="tool">Tongs for tossing pasta</p>
+                    <p class="tool">Grater (if using fresh Parmesan)</p>
+                </section>
+            </aside>
+        </section>
     </main>
 
     <div id="cookieConsent">
@@ -173,7 +188,6 @@
           </div>
     </footer>
     <script src="assets/scripts/newsletter-sub.js"></script>
-    <script src="assets/scripts/slider.js"></script>
     <script src="assets/scripts/cookie.js"></script>
 </body>
 </html>

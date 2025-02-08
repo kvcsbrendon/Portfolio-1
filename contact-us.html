@@ -17,7 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="assets/scripts/backtotop.js"></script>
     <script src="assets/scripts/year.js"></script>
-    <script src="assets/scripts/subscribe.js"></script>
     <script src="assets/scripts/dark-mode.js"></script>
     <script src="assets/scripts/hamburger.js"></script>
 </head>
@@ -61,7 +60,7 @@
         
         <form class="form" id="contact-us-form" action="https://formspree.io/f/xrbekzld" method="POST" autocomplete="on">
           <label for="title" class="required">Title: </label>
-          <select id="title" name="title" required>
+          <select id="title" class="dropdown" name="title" required>
               <option value="not-selected" disabled selected>Select a Title</option>
               <option value="mr">Mr.</option>
               <option value="miss">Miss.</option>
@@ -71,20 +70,20 @@
           </select>
           
           <label for="first-name" class="required">First Name: </label>
-          <input type="text" id="first-name" name="given-name" autocomplete="given-name" placeholder="Enter your first name e.g. John" required>
+          <input type="text" id="first-name" name="given-name" autocomplete="given-name" placeholder="Enter your first name e.g. John" aria-label="First Name" required>
 
           <label for="last-name" class="required">Last Name: </label>
-          <input type="text" id="last-name" name="family-name" autocomplete="family-name" placeholder="Enter your last name e.g. Smith" required>
+          <input type="text" id="last-name" name="family-name" autocomplete="family-name" placeholder="Enter your last name e.g. Smith" aria-label="Last Name" required>
 
           <label for="email" class="required">Aston University Email: </label>
-          <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston email (e.g. jsmith@aston.ac.uk)" required>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your Aston University email (e.g. jsmith@aston.ac.uk)" aria-label="Aston University Email Adress" required>
 
           <label for="email-confirmation" class="required">Confirm your email: </label>
-          <input type="email" id="email-confirmation" name="email-confirmation" onpaste="return false;" ondrop="return false;" autocomplete="off" placeholder="Enter your Aston email again" required>
+          <input type="email" id="email-confirmation" name="email-confirmation" autocomplete="off" placeholder="Enter your Aston University email again" title="Pasting is not allowed. Please type the email manually." aria-label="Confirm Email" onpaste="return false;" ondrop="return false;" required>
           
           
           <label for="phone">Phone number: </label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number.">
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Enter your Phone number." aria-label="Phone Number">
           
           <fieldset>
               <legend class="required">Preferred Contact Method:</legend>
@@ -96,7 +95,7 @@
           </fieldset>
 
           <label for="subject" class="required">Subject: </label>
-          <select id="subject" name="subject" required>
+          <select id="subject" class="dropdown" name="subject" required>
             <option value="not-selected" disabled selected>Select a subject</option>
             <option value="general">General Inquiry</option>
             <option value="support">Support</option>
@@ -109,7 +108,7 @@
 
           <button type="submit" class="button" id="submit-btn">Submit</button>
       </form>
-      <div class="alert-info" style="display: none;"></div>
+      <div class="alert-info" style="display: none;" role="alert" aria-live="assertive"></div>
         <div class="mailto-container">
             <p>If our form doesn't work, write us an email:</p>
             <a href="mailto:bonappetit2025@outlook.com?subject=I%20wish%20to%20discus......&body=Hey%20Brendon%2C%0D%0A%0D%0AI%20just%20wanted%20to%20talk%20about....%0D%0A%0D%0AYour%20friend" class="button" id="email-us-btn">Email Us</a>
@@ -117,9 +116,9 @@
 </main>
 
     <div id="cookieConsent">
-      We use cookies to enhance your experience. By continuing to visit this site you agree to our 
+      <p>This is a dummy site made for educational purposes only! By continuing to visit this site you agree to our</p>
       <a href="privacy-policy.html">Privacy Policy</a>.
-      <button id="acceptCookies">Accept</button>
+      <button id="acceptCookies" class="button no-hover">Accept</button>
     </div>
 
     <a href="#" id="backToTopBtn" aria-label="Back to Top" title="Go to top">
@@ -154,7 +153,7 @@
         <div class="footer-right">
             <h3>Receive my latest cooking tips</h3>
             <form id="subscribe-form">
-                <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" required>
+                <input type="email" id="email-input" name="email" autocomplete="email" placeholder="Enter your Aston email e.g. jsmith@aston.ac.uk" aria-label="Aston University Email Address" required>
                 <button class="button" id="subscribe-btn" type="submit">Subscribe</button>
             </form>
         </div>

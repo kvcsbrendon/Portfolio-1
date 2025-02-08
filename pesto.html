@@ -41,7 +41,7 @@
       
         <nav id="main-nav">
           <ul>
-            <li id="current-page"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="book-class.html">Become a Chef</a></li>
             <li><a href="contact-us.html">Contact us</a></li>
@@ -52,72 +52,103 @@
           <i id="mode-icon" class="bi bi-moon"></i>
         </button>
       </header>
-    <main>
-      <section class="top-index">
-        <h2>Welcome to Bon Appétit!</h2>
-        <p>Discover authentic recipes and book a private cooking session.</p>
-        <a href="recipes.html">
-          <button class="button">Explore Recipes</button>
-        </a>
-        <a href="book-class.html">
-          <button class="button">Book a Private Lesson</button>
-        </a>
-      </section>
-      <h3 class="specialty-h3">My Specialty Region</h3>
-      <section class="history">
-        <div class="history left">
-          <img src="Assets/images/italy.svg">
-        </div>
-        <div class="history right">
-          <p>Cooking isn’t just my profession—it’s my passion and lifelong adventure. I’ve trained under master chefs, learned from Tuscan nonnas, and explored flavors from Rome to Sicily. From Moroccan spice markets to Michelin-starred Paris, street-side osterias to grand kitchens, I’ve mastered it all. Every dish I create reflects this journey—tradition, technique, and heart. Now, I’m here to share the true taste of Italy with you. No shortcuts, no imitations—just authentic, soul-satisfying cuisine. From handmade pasta to slow-cooked sauces, let’s cook like true Italians!</p>
-        </div>
-      </section>
-      <section class="signature-index">
-        <h3 class="slide-h3">My signature dishes</h3>
-        <p class="slide-text">Let me show you how to make these food in the proper way from Italy</p>
-        <div class="slider-container">
-          <button class="prev">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <div class="slide active">
-            <img src="Assets/images/Pineapple-pizza.svg" alt="Pineapple Pizza with ketchup">
-            <div class="slide-text">
-              <h3>Neapolitan  Pizza</h3>
-                    <p class="sldie-p">An authentic Neapolitan pizza, crafted with a rich ketchup base and perfectly balanced with sweet pineapple and melted cheese. A true culinary masterpiece that brings a delightful harmony of flavors to every bite.</p>
-              <a href="pineapple-pizza.html">
-                <button class="button">Check out my Neapolitan  Pizza Recipe</button>
-              </a>
+      <main class="recipe-container">        
+        <section class="recipe-thumbnail">
+            <div class="food-img">
+                <img src="Assets/images/pesto.svg" alt="Pesto pasta Made with Spinach and Mayo">
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/cannoli.svg" alt="Cannoli with Nutella and Marshmallows">
-            <div class="slide-text">
-              <h3>Cannoli al Cioccolato</h3>
-              <p class="sldie-p">
-                A decadent twist on a Sicilian classic, Cannoli al Cioccolato takes the crisp, golden shell of traditional cannoli and fills it with rich, creamy Nutella and soft mini marshmallows. Finished with a delicate dusting of powdered sugar, this indulgent treat is the perfect blend of crunch, chocolate, and melt-in-your-mouth sweetness.
-              </p>
-              <a href="cannoli.html">
-                <button class="button">Check out my Cannoli al Cioccolato recipe</button>
-              </a>
+            <div class="food-info">
+                <h2 class="recipe-title">Pesto Verde Moderno</h2>
+                <blockquote>
+                    A health-conscious reimagining of the traditional pesto, this vibrant green sauce blends fresh spinach with creamy mayonnaise and crunchy walnuts, creating a smooth and indulgent texture. Tossed with perfectly soft penne, Pesto Verde Moderno is a dish that brings a fresh twist to a beloved classic—lighter, smoother, and definitely better for you.
+                </blockquote>
             </div>
-          </div>
-          <div class="slide">
-            <img src="Assets/images/spaghetti-hotdog.svg" alt="Spaghetti Ketchup with hot dogs">
-            <div class="slide-text">
-              <h3>Spaghetti alla Wurstel</h3>
-              <p class="sldie-p">
-                A true Italian street food classic, loved by those in the know. Perfectly boiled spaghetti is coated in a rich, vibrant ketchup sauce, complemented by the savory bite of sliced hot dogs. Simple, satisfying, and bursting with bold flavors, this dish is a must-try for any pasta enthusiast.
-              </p>
-              <a href="Spaghetti-hotdog.html">
-                <button class="button">Check out my Spaghetti alla Wurstel recipe</button>
-              </a>
+        </section>
+        
+        <section class="details">
+            <div id="prep">
+                <h3>Preparation Time</h3>
+                <p>5 Minutes</p>
             </div>
-          </div>
-          <button class="next">
-            <i class="bi bi-chevron-right"></i>
-          </button>
+            <div id="cooking">
+                <h3>Total Time</h3>
+                <p>20 Minutes</p>
+            </div>
+            <div id="serving-size">
+                <h3>Serving Size</h3>
+                <p>2-4 Servings</p>
+            </div>
+        </section>
+        
+        <div class="food-tags">
+            <span class="food-tag">Pesto</span>
+            <span class="food-tag">Pasta</span>
+            <span class="food-tag">Healthy</span>
+            <span class="food-tag">Modern-Italian</span>
         </div>
-      </section>
+        
+        <section class="recipe-layout">
+            <article class="instructions-section">
+                <h3>Instructions</h3>
+                <div class="cooking-step">
+                    <h4>Step 1 - Cook the Pasta</h4>
+                    <p>
+                        Bring a large pot of salted water to a boil. Add 250g of penne pasta and cook 2-3 minutes longer than al dente for a soft, comforting texture. Drain and set aside, reserving ¼ cup of pasta water in case you need to loosen the sauce.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 2 - </h4>
+                    <p>
+                        In a blender or food processor, combine:
+                        <ul>
+                            <li>2 cups fresh spinach (washed and dried)</li>
+                            <li>½ cup mayonnaise</li>
+                            <li>¼ cup walnuts</li>
+                            <li>1 garlic clove</li>
+                            <li>¼ tsp salt</li>
+                            <li>2 tbsp olive oil</li>
+                        </ul>
+                        Blend until smooth, adding a splash of pasta water if needed for a looser consistency.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 3 - Toss the Pasta in the Sauce</h4>
+                    <p>
+                        Transfer the drained pasta to a large bowl and pour the Pesto Verde Moderno over it. Toss thoroughly until every piece is evenly coated in the rich, creamy sauce.
+                    </p>
+                </div>
+                <div class="cooking-step">
+                    <h4>Step 4 - Serve and Enjoy</h4>
+                    <p>
+                        Plate the pasta and finish with an optional sprinkle of grated Parmesan or extra walnuts for texture. Serve immediately and enjoy your modern, healthier pesto experience.
+                    </p>
+                </div>
+            </article>
+            
+            <aside class="ingredients-tools">
+                <section class="ingredient-list">
+                    <h3>Ingredients</h3>
+                    <p class="ingredient">250g penne pasta</p>
+                    <p class="ingredient">2 cups fresh spinach</p>
+                    <p class="ingredient">½ cup mayonnaise</p>
+                    <p class="ingredient">¼ cup walnuts</p>
+                    <p class="ingredient">1 garlic clove</p>
+                    <p class="ingredient">¼ tsp salt</p>
+                    <p class="ingredient">2 tbsp olive oil</p>
+                    <p class="ingredient">¼ cup reserved pasta water (if needed)</p>
+                    <p class="ingredient">Optional: grated Parmesan for garnish</p>
+                    
+                </section>
+                
+                <section class="tools-list">
+                    <h3>Tools</h3>
+                    <p class="tool">Large pot for boiling pasta</p>
+                    <p class="tool">Strainer for draining pasta</p>
+                    <p class="tool">Blender or food processor</p>
+                    <p class="tool">Large mixing bowl</p>
+                </section>
+            </aside>
+        </section>
     </main>
 
     <div id="cookieConsent">
@@ -173,7 +204,6 @@
           </div>
     </footer>
     <script src="assets/scripts/newsletter-sub.js"></script>
-    <script src="assets/scripts/slider.js"></script>
     <script src="assets/scripts/cookie.js"></script>
 </body>
 </html>
