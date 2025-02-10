@@ -77,7 +77,7 @@
 /*       Mobile Adjustments      */
 /*         Max Width 768px       */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   header {
       flex-direction: row;
       align-items: center;

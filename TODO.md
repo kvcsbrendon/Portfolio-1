@@ -15,8 +15,8 @@
 
 
 ## In Progress
-- [ ]<address> for the address in the footer.
-- [ ]Changing the Title tag for each html document.
+- [X]<address> for the address in the footer. 
+- [X]Changing the Title tag for each html document.
 - [ ]Changing the mailto on everypage in the footer.
 
 

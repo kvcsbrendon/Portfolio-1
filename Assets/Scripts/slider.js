@@ -41,15 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.innerWidth > 768) {
             interval = setInterval(nextSlide, 3000);
         }
+        else {
+            interval = setInterval(nextSlide, 5000);
+        }
     }
 
     function stopAutoSlide() {
         clearInterval(interval);
     }
-
-    if (window.innerWidth > 768) {
-        startAutoSlide();
-    }
+    
 
     if (sliderContainer) {
         sliderContainer.addEventListener('mouseover', stopAutoSlide);
