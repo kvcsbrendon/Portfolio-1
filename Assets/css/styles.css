@@ -1105,14 +1105,9 @@ select {
 }
 
 
-
-
-
-
-
-
-
-
+/* ============================= */
+/*       Single Recipes Styles   */
+/* ============================= */
 /* Recipe Container */
 .recipe-container {
   display: flex;

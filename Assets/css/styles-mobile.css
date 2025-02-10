@@ -313,6 +313,14 @@
   .instructions-section {
     order: 1; /* Keeps instructions below ingredients/tools */
   }
+  
+  .history {
+    display: block;
+  }
+
+  .history-left img {
+    max-height: 10%;
+  }
 }
 
 
