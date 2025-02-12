@@ -71,7 +71,7 @@
                 <p>5 Minutes</p>
             </div>
             <div id="cooking">
-                <h3>Total Time</h3>
+                <h3>Make Time</h3>
                 <p>15 Minutes</p>
             </div>
             <div id="serving-size">
@@ -139,6 +139,66 @@
                     <p class="tool">Large pan for heating sauce</p>
                     <p class="tool">Tongs for tossing pasta</p>
                 </section>
+                <section class="reviews-container">
+                    <h3>Customer Reviews</h3>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p>"Creamy, peppery, and easy to make—great for a quick pasta fix!"</p>
+                        <span class="reviewer">- Martha Stewart</span>
+                    </div>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Simple, delicious, and packed with flavor—loved it!"</p>
+                        <span class="reviewer">- Jamie Oliver</span>
+                    </div>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p>"Too rich and not authentic enough, but still edible."</p>
+                        <span class="reviewer">- Gordon Ramsay</span>
+                    </div>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p>"This is not cacio e pepe… just Alfredo with extra pepper."</p>
+                        <span class="reviewer">- Nigella Lawson</span>
+                    </div>
+                    <div class="review-form">
+                        <h4>Leave a Review</h4>
+                        <input type="text" id="reviewer-name" placeholder="Your Name" required>
+                        <div class="rating">
+                            <span class="star" data-value="1">☆</span>
+                            <span class="star" data-value="2">☆</span>
+                            <span class="star" data-value="3">☆</span>
+                            <span class="star" data-value="4">☆</span>
+                            <span class="star" data-value="5">☆</span>
+                        </div>
+                        <textarea id="review-text" placeholder="Write your review..." required></textarea>
+                        <button id="submit-review" class="button">Submit Review</button>
+                    </div>
+                </section>
             </aside>
         </section>
     </main>
@@ -197,5 +257,6 @@
     </footer>
     <script src="assets/scripts/newsletter-sub.js"></script>
     <script src="assets/scripts/cookie.js"></script>
+    <script src="assets/scripts/Review.js"></script>
 </body>
 </html>

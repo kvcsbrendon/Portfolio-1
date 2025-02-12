@@ -7,7 +7,7 @@
     <meta name="author" content="Brendon Kovacs">
     <meta name="keywords" content="recipes, virtual kitchen, cooking, food, cuisine">
     <meta name="description" content="Explore delicious recipes from our virtual kitchen, featuring signature dishes and easy-to-follow cooking guides.">
-    <title>Bon Appétit! - Home Page</title>
+    <title>Food Template - Bon Appétit!</title>
     <link rel="icon" type="image/png" href="assets/images/chef.svg">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles-mobile.css">
@@ -134,6 +134,33 @@
                     <p class="tool"></p>
                     <p class="tool"></p>
                 </section>
+                <section class="reviews-container">
+                    <h3>Customer Reviews</h3>
+                    <div class="review">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p>""</p>
+                        <span class="reviewer">- </span>
+                    </div>
+                    <div class="review-form">
+                        <h4>Leave a Review</h4>
+                        <input type="text" id="reviewer-name" placeholder="Your Name" required>
+                        <div class="rating">
+                            <span class="star" data-value="1">☆</span>
+                            <span class="star" data-value="2">☆</span>
+                            <span class="star" data-value="3">☆</span>
+                            <span class="star" data-value="4">☆</span>
+                            <span class="star" data-value="5">☆</span>
+                        </div>
+                        <textarea id="review-text" placeholder="Write your review..." required></textarea>
+                        <button id="submit-review" class="button">Submit Review</button>
+                    </div>
+                </section>
             </aside>
         </section>
     </main>
@@ -192,5 +219,6 @@
     </footer>
     <script src="assets/scripts/newsletter-sub.js"></script>
     <script src="assets/scripts/cookie.js"></script>
+    <script src="assets/scripts/Review.js"></script>
 </body>
 </html>

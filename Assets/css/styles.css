@@ -57,6 +57,7 @@
   --primary-text: #222222;
   --secondary-text: #999999;
   --border: #ccc;
+  --star:#B8860B;
 }
 
 /* ============================= */
@@ -78,6 +79,7 @@ body.dark-mode {
 --border: #666666;
 --social-hover:  rgba(98, 0, 238, 0.7);
 --blackwhite: rgb(255, 255, 255, 0.2);
+--star: #FFD700;
 }
 
 body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
@@ -604,8 +606,8 @@ textarea.messagebox {
   font-size: var(--font-size-sm);
 }
 
-
-
+/* Figure out the empty space here
+             Mental note        */
 
 #why-chef, #notes {
   min-height: 60px;
@@ -1099,6 +1101,11 @@ select {
   object-fit: contain;
 }
 
+.recipe-rating {
+  color: var(--star);
+  font-size: var(--font-size-lg-fluid);
+  margin-top: 5px;
+}
 
 .food-title {
   font-size: var(--font-size-2xl-fluid);
@@ -1270,11 +1277,11 @@ blockquote {
   gap: 2rem;
 }
 
-.ingredient-list h3, .tools-list h3 {
+.ingredient-list h3, .tools-list h3, .reviews-container h3 {
   text-align: center;
   text-decoration: underline;
   margin-bottom: 15px;
-  font-size: var(--font-size-2xl-fluid);
+  font-size: var(--font-size-xl-fluid);
   color: var(--primary-text);
   font-weight: 600;
 }
@@ -1293,7 +1300,7 @@ blockquote {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ingredient-list:hover, .tools-list:hover, .instructions-section:hover, .food-img:hover, .food-info:hover {
+.ingredient-list:hover, .tools-list:hover, .instructions-section:hover, .food-img:hover, .food-info:hover, .reviews-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px var(--social-hover);
 }
@@ -1314,3 +1321,93 @@ blockquote {
   margin-left: 20px;
   padding: 5px;
 }
+
+/* ============================= */
+/*        Review Styles          */
+/* ============================= */
+.reviews-container {
+  background: var(--secondary-bg);
+  border: 2px solid var(--btn-border);
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 350px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--searchbar) var(--nav-a);
+}
+
+.review {
+  padding: 10px;
+  border-left: 4px solid var(--btn-border);
+  margin-bottom: 15px;
+  font-size: var(--font-size-md-fluid);
+}
+
+.stars {
+  color: var(--star);
+  font-size: var(--font-size-lg-fluid);
+  margin-bottom: 5px;
+}
+
+.stars i {
+  margin-right: 3px;
+}
+
+.review p {
+  margin: 5px 0;
+  font-style: italic;
+  color: var(--primary-text);
+}
+
+.reviewer {
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.review-form {
+  background: var(--secondary-bg);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-form h4 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--primary-text);
+}
+
+.review-form input, .review-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--btn-border);
+  border-radius: 5px;
+  font-size: var(--font-size-md-fluid);
+}
+
+.review-form textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star {
+  font-size: var(--font-size-lg-fluid);
+  color: var(--star);
+  transition: transform 0.2s ease-in-out;
+}
+
+.star:hover, .star.active {
+  transform: scale(1.5);
+}
+

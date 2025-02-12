@@ -7,13 +7,6 @@
     -[ ]Email
     -[ ]Both
 
-### Title Bon Appetit!
-- [ ] Italian or french
-    -[ ]Italian
-    -[ ]French
-
-
-
 ## In Progress
 - [X]<address> for the address in the footer. 
 - [X]Changing the Title tag for each html document.
