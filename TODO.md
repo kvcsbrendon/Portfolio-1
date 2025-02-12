@@ -4,13 +4,15 @@
 ### Mailto
 - [ ] Where should I put the mailto in the footer
     -[ ]Name
-    -[ ]Email
+    -[X]Email
     -[ ]Both
 
 ## In Progress
 - [X]<address> for the address in the footer. 
 - [X]Changing the Title tag for each html document.
-- [ ]Changing the mailto on everypage in the footer.
+- [X]Changing the mailto on everypage in the footer.
+- [X]Cange the mailto in the contact and booking
+- [X]Change the em tag for the footer middle.
 
 
 

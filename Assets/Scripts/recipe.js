@@ -14,61 +14,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let selectedTags = new Set();
 
-    // Event listener for checkboxes
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener("change", function () {
             const tagName = this.dataset.category;
 
-            // Toggle tag selection
             if (this.checked) {
                 selectedTags.add(tagName);
             } else {
                 selectedTags.delete(tagName);
             }
 
-            filterRecipes(); // Call filtering function
+            filterRecipes();
         });
     });
 
-    // Event listener for search input
     searchInput.addEventListener("keyup", function () {
         filterRecipes();
     });
 
-    // Clear all filters
     clearButton.addEventListener("click", function () {
         selectedTags.clear();
         checkboxes.forEach(checkbox => (checkbox.checked = false));
-        searchInput.value = ""; // Clear search bar
+        searchInput.value = "";
         filterRecipes();
     });
 
-    // Main function to filter recipes
     function filterRecipes() {
         let searchFilter = searchInput.value.toUpperCase();
-        let recipesFound = false; // Track if any recipe matches
+        let recipesFound = false;
 
         recipes.forEach(recipe => {
             const foodTags = recipe.dataset.tags.split(",");
             const titleElement = recipe.getElementsByClassName("food-title")[0];
             const titleText = titleElement ? titleElement.textContent || titleElement.innerText : "";
 
-            // Check if search filter matches food title
             const matchesSearch = titleText.toUpperCase().includes(searchFilter);
 
-            // Check if recipe matches all selected tags
             const matchesAllTags = [...selectedTags].every(tag => foodTags.includes(tag));
 
-            // Show or hide the recipe based on both conditions
             if ((selectedTags.size === 0 || matchesAllTags) && matchesSearch) {
                 recipe.style.display = "block";
-                recipesFound = true; // A recipe was found
+                recipesFound = true;
             } else {
                 recipe.style.display = "none";
             }
         });
 
-        // Show "No Results Found" if no recipes match
         noResultsMessage.style.display = recipesFound ? "none" : "block";
     }
 });

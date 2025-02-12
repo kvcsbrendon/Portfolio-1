@@ -505,7 +505,7 @@ footer {
   margin: 0px 10px
 }
 
-.footer-middle em {
+.footer-middle a {
   text-decoration: underline;
 }
 
@@ -648,10 +648,14 @@ select {
     color: red;
 }
 
+.small-text {
+  font-size: var(--font-size-xxs-fluid);
+  color: var(--secondary-text);
+}
+
 /* ============================= */
 /*      Book a Class Styles      */
 /* ============================= */
-
 .slots {
     display: none;
     margin-top: 10px;
@@ -1104,7 +1108,14 @@ select {
 .recipe-rating {
   color: var(--star);
   font-size: var(--font-size-lg-fluid);
-  margin-top: 5px;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.rating-count {
+  font-size: var(--font-size-xxxs-fluid);
+  color: var(--secondary-text);
+  margin-top: 2px;
 }
 
 .food-title {

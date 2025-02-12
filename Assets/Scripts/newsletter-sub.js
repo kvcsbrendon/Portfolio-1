@@ -26,7 +26,7 @@ document
     }
 
     const email = emailInput.value.trim();
-    const emailPattern = /^[^\s@]+@aston\.ac\.uk$/i; // Ensure only Aston University emails
+    const emailPattern = /^[^\s@]+@aston\.ac\.uk$/i;
 
     if (!emailPattern.test(email)) {
       errorMessage.innerHTML = '<br>❌ Please enter a valid Aston University email <br> (must end with @aston.ac.uk).';

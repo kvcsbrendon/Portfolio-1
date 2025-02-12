@@ -1,4 +1,3 @@
-// Function to set a cookie
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -9,7 +8,6 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
   }
 
-  // Function to check if a cookie exists
   function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -21,18 +19,15 @@ function setCookie(name, value, days) {
     return null;
   }
 
-  // Check if the cookieConsent cookie is set and hide the banner if it is
   function checkCookieConsent() {
     if (getCookie('cookieConsent')) {
       document.getElementById('cookieConsent').style.display = 'none';
     }
   }
 
-  // When the user clicks the accept button, set the cookie and hide the banner
   document.getElementById('acceptCookies').addEventListener('click', function() {
-    setCookie('cookieConsent', 'true', 30); // Cookie valid for 30 days
+    setCookie('cookieConsent', 'true', 30);
     document.getElementById('cookieConsent').style.display = 'none';
   });
 
-  // Run the check on page load
   checkCookieConsent();

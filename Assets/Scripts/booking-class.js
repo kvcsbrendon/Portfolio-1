@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         today.setDate(today.getDate() + 2);
         
         const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Ensure 2-digit format
-        const day = String(today.getDate()).padStart(2, '0'); // Ensure 2-digit format
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
         const minDate = `${year}-${month}-${day}`;
         
         datePicker.setAttribute('min', minDate);

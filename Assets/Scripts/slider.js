@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderContainer.addEventListener('mouseleave', startAutoSlide);
     }
 
-    // **Improved Touch Swipe (Horizontal Only)**
     let touchStartX = 0, touchStartY = 0;
     let touchEndX = 0, touchEndY = 0;
 
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let deltaY = touchEndY - touchStartY;
 
         if (Math.abs(deltaX) > Math.abs(deltaY)) { 
-            // Only trigger swipe if horizontal movement is greater than vertical
             if (deltaX < 0) nextSlide();
             if (deltaX > 0) prevSlide();
         }
