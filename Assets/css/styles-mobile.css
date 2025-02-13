@@ -1,77 +1,42 @@
-/* ============================= */
-/*           Root Styles         */
-/* ============================= */
 :root {
-    --primary-bg: #F5E5D3;
-    --secondary-bg: #EFD9C5;
-    --top-index: #EAD5C0;
-    --social-hover: rgba(212, 138, 60, 0.7);
-    --input: #FAF1E8 ;
-    --primary-btn: #D48A3C;
-    --primary-btn-hover: #E6A86B;
-    --btn-border: #6B4F4F;
-    --the-line: #F0D0B1;
-    --primary-text: #333333;
-    --secondary-text: #999999;
-    --border: #ccc;
-    --font-family: 'Poppins', 'Lato', sans-serif;
-  
-    /* Font Sizes. ChatGPT Recommendation */
-    /* Extra Small Text (Static + Responsive) */
-    --font-size-xxxs: 0.5rem;  /* 8px - Tiny captions, legal disclaimers */
-    --font-size-xxxs-fluid: clamp(0.5rem, 0.75vw, 0.625rem); /* 8px-10px */
-  
-    --font-size-xxs: 0.625rem; /* 10px - Extra small text */
-    --font-size-xxs-fluid: clamp(0.625rem, 1vw, 0.75rem); /* 10px-12px */
-  
-    --font-size-xs: 0.75rem;   /* 12px - Small UI elements */
-    --font-size-xs-fluid: clamp(0.75rem, 1.2vw, 0.875rem); /* 12px-14px */
-  
-    /* Standard Text (Static + Responsive) */
-    --font-size-sm: 0.875rem;   /* 14px - Default UI text */
-    --font-size-sm-fluid: clamp(0.875rem, 1.5vw, 1rem); /* 14px-16px */
-  
-    --font-size-md: 1rem;       /* 16px - Standard body text */
-    --font-size-md-fluid: clamp(1rem, 1.8vw, 1.125rem); /* 16px-18px */
-  
-    --font-size-lg: 1.125rem;   /* 18px - Slightly larger text */
-    --font-size-lg-fluid: clamp(1.125rem, 2vw, 1.25rem); /* 18px-20px */
-  
-    --font-size-xl: 1.25rem;    /* 20px - Subheadings */
-    --font-size-xl-fluid: clamp(1.25rem, 2.2vw, 1.5rem); /* 20px-24px */
-  
-    /* Large Text (Static + Responsive) */
-    --font-size-2xl: 1.5rem;   /* 24px - Small Headings */
-    --font-size-2xl-fluid: clamp(1.5rem, 3vw, 2rem); /* 24px-32px */
-  
-    --font-size-3xl: 2rem;     /* 32px - Headings */
-    --font-size-3xl-fluid: clamp(2rem, 3.5vw, 2.5rem); /* 32px-40px */
-  
-    --font-size-4xl: 2.5rem;   /* 40px - Section Titles */
-    --font-size-4xl-fluid: clamp(2.5rem, 4vw, 3rem); /* 40px-48px */
-  
-    --font-size-5xl: 3rem;     /* 48px - Large Titles */
-    --font-size-5xl-fluid: clamp(3rem, 5vw, 3.75rem); /* 48px-60px */
-  
-  }
-  
-  /* ============================= */
-  /*      Dark Mode Overrides      */
-  /* ============================= */
-  body.dark-mode {
-  --primary-bg: #1a1a1a;
-  --secondary-bg: #333333;
-  --top-index: #262626;
-  --input: #1F1B24;
-  --the-line: #444444;
-  --primary-text: #e0e0e0;
-  --secondary-text: #b0b0b0;
-  --primary-btn: #3700B3;
-  --primary-btn-hover: #6200ee;
-  --btn-border: #03DAC6;
-  --border: #666666;
-  --social-hover:  rgba(98, 0, 238, 0.7);
-  }
+  --font-family: 'Poppins', 'Lato', sans-serif;
+
+  /* Extra Small Text */
+  --font-size-xxxs: 0.5rem;
+  --font-size-xxxs-fluid: clamp(0.5rem, 0.75vw, 0.625rem);
+
+  --font-size-xxs: 0.625rem;
+  --font-size-xxs-fluid: clamp(0.625rem, 1vw, 0.75rem);
+
+  --font-size-xs: 0.75rem;
+  --font-size-xs-fluid: clamp(0.75rem, 1.2vw, 0.875rem);
+
+  /* Standard Text */
+  --font-size-sm: 0.875rem;
+  --font-size-sm-fluid: clamp(0.875rem, 1.5vw, 1rem);
+
+  --font-size-md: 1rem;
+  --font-size-md-fluid: clamp(1rem, 1.8vw, 1.125rem);
+
+  --font-size-lg: 1.125rem;
+  --font-size-lg-fluid: clamp(1.125rem, 2vw, 1.25rem);
+
+  --font-size-xl: 1.25rem;
+  --font-size-xl-fluid: clamp(1.25rem, 2.2vw, 1.5rem);
+
+  /* Large Text */
+  --font-size-2xl: 1.5rem;
+  --font-size-2xl-fluid: clamp(1.5rem, 3vw, 2rem);
+
+  --font-size-3xl: 2rem;
+  --font-size-3xl-fluid: clamp(2rem, 3.5vw, 2.5rem);
+
+  --font-size-4xl: 2.5rem;
+  --font-size-4xl-fluid: clamp(2.5rem, 4vw, 3rem);
+
+  --font-size-5xl: 3rem;
+  --font-size-5xl-fluid: clamp(3rem, 5vw, 3.75rem);
+}
 
 /* ============================= */
 /*       Mobile Adjustments      */
@@ -100,25 +65,29 @@
   #main-nav {
       display: none;
       position: absolute;
-      top: 60px; /* Moves it below the header */
+      top: 80px;
       left: 0;
       width: 100%;
       background-color: var(--primary-bg);
       padding: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px var(--social-hover);
       text-align: center;
       border-top: 2px solid var(--the-line);
   }
+  #main-nav.open {
+    display: block;
+    transform: translateY(0); /* Slides in */
+}
 
   #hamburger-menu {
       display: block;
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 1.5rem;
+      font-size: var(--font-size-2xl-fluid);
       color: var(--primary-text);
-      margin-left: auto; /* Ensures it moves to the right */
-      margin-right: 20px; /* Adds space between hamburger and toggle */
+      margin-left: auto;
+      margin-right: 20px; 
   }
 
   #main-nav.open {
@@ -139,14 +108,13 @@
   }
 
   #mode-toggle {
-      margin-left: 10px; /* Adds space between toggle and hamburger */
-      margin-right: 35px; /* Keeps some space from the edge */
+      margin-left: 10px;
+      margin-right: 35px;
       position: relative;
       top: 0;
       transform: none;
   }
 
-  /* Footer improvements */
   footer {
       flex-direction: column;
       align-items: center;
@@ -218,13 +186,13 @@
   }
 
   .slide img {
-    width: 70%; /* Increase image width for better visibility */
+    width: 70%;
     max-width: 350px;
   }
 
   .slide-text {
     min-width: 100%;
-    max-width: 100%; /* Allow text to take more space */
+    max-width: 100%;
     font-size: var(--font-size-lg);
   }
 
@@ -304,14 +272,14 @@
   }
 
   .ingredient-list h3, .tools-list h3 {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl-fluid);
   }
   .ingredients-tools {
-    order: -1; /* Moves it to the top */
+    order: -1;
   }
 
   .instructions-section {
-    order: 1; /* Keeps instructions below ingredients/tools */
+    order: 1;
   }
   
   .history {
@@ -320,6 +288,9 @@
 
   .history-left img {
     max-height: 10%;
+  }
+  .recipe-title {
+    margin: 0 auto;
   }
 }
 
@@ -334,7 +305,7 @@
   }
 
   #Logo img {
-      height: 50px; /* Slightly smaller for compact look */
+      height: 50px;
   }
 
   .title-motto h1 {
