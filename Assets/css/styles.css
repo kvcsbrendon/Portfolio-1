@@ -889,17 +889,23 @@ select {
   margin: 10px;
   cursor: pointer;
   border-radius: 50%;
-  font-size: 60px;
+  font-size: var(--font-size-5xl-fluid);
+  border: none;
+  outline: none;
 }
 
 .prev:hover, .next:hover {
   color: var(--primary-btn);
   transform: scale(1.2);
   transition: transform 0.3s ease;
+  border: none;
+  outline: none;
 }
 
 .prev:active, .next:active {
   transform: scale(0.8);
+  border: none;
+  outline: none;
 }
 
 .history {
@@ -970,7 +976,7 @@ select {
   border-top:  3px solid var(--btn-border);
 }
 #cookieConsent a {
-  color: var(--primary-btn-hover);
+  color: var(--nav-a);
   text-decoration: underline;
 }
 
@@ -1068,7 +1074,8 @@ select {
   cursor: pointer;
 }
 
-/* -------- Recipe Grid Styles -------- */
+/*
+Old recipe Grid style wasnt really suitable for this job because wasnt responsive enough
 .recipes-container {
   max-width: 95%;
   margin: 0 auto;
@@ -1077,10 +1084,24 @@ select {
   gap: 20px;
   justify-content: center;
   padding: 10px;
+} */
+
+
+.recipes-container {
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  justify-content: center;
+  justify-items: center;
+  padding: 10px;
 }
 
 .recipe {
   background-color: var(--secondary-bg);
+  width: 250px;
+  min-height: 380px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--blackwhite);
   padding: 15px;

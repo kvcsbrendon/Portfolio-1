@@ -18,4 +18,4 @@
 
 
 ## Known Bugs
-- [ ] when I press the slider button on index plus using the arrow keys at the same time there is a weird box
+- [X] when I press the slider button on index plus using the arrow keys at the same time there is a weird box
