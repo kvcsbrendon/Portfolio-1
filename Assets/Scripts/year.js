@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var yearData = "RXhjZXB0IHlvdSE=";
     var triggerEvent = new Date().getMilliseconds();
 
-    if (triggerEvent % 5 === 0) {
+    if (triggerEvent % 3 === 0) {
         let yearMessage = atob(yearData);
 
         let yearContainer = document.createElement("div");

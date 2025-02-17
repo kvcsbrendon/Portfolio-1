@@ -60,6 +60,15 @@ This file lists the assets used in this project and their respective attribution
 
 ---
 
+### 7. **Form Handling - FormEasy**
+- **Description**: An open-source form-handling library used to simplify form validation and submission.
+- **Creator**: Basharath
+- **License**: MIT License
+- **Source**: [FormEasy on GitHub](https://github.com/Basharath/FormEasy)
+- **Notes**: FormEasy provides an easy and efficient way to manage form interactions. A big thank you to Basharath for creating and maintaining this valuable tool for the development community.
+
+---
+
 ## Contact Information
 If you are the creator of any asset listed above and have questions, concerns, or requests regarding attribution or usage, please reach out to me at kvcsbrendon@gmail.com.
 
