@@ -43,7 +43,7 @@
 /*         Max Width 768px       */
 /* ============================= */
 @media (max-width: 868px) {
-  header {
+  .main-header {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -284,7 +284,7 @@
     order: -1;
   }
 
-  .instructions-section {
+  .instructions {
     order: 1;
   }
   
@@ -321,7 +321,7 @@
 /*         Max Width 480px       */
 /* ============================= */
 @media (max-width: 480px) {
-  header {
+  .main-header {
       padding: 10px;
   }
 

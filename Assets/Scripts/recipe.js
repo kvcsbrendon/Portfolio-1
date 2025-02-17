@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     noResultsMessage.style.textAlign = "center";
     noResultsMessage.style.fontSize = "18px";
     noResultsMessage.style.color = "#888";
-    document.querySelector(".recipes-container").appendChild(noResultsMessage);
+    document.querySelector(".recipes").appendChild(noResultsMessage);
 
     let selectedTags = new Set();
 

@@ -163,7 +163,7 @@ a {
 } */
 
 /* -------- Sticky Header (position: sticky) -------- */
-header {
+.main-header {
   background-color: var(--secondary-bg);
   padding: 20px 20px 10px 20px;
   display: flex;
@@ -545,7 +545,7 @@ form {
 #contact-h2 {
   text-align: center;
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: var(--font-size-2xl-fluid);
   margin-top: 20px;
 }
 
@@ -796,110 +796,12 @@ select {
   font-size: var(--font-size-lg-fluid);
 }
 
-.signature-index {
-  border-top: 3px solid var(--the-line);
-  padding-top: 20px;
-  padding-bottom: 30px;
-  border-bottom:  3px solid var(--the-line);
-  background-color: var(--tertiary-index);
-}
-
-
-/* .slider-container {
-  border: 2px solid var(--btn-border);
-  width: 100%;
-  max-width: 1080px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
-  
-}
-.slider-container h3 {
-  text-decoration: underline;
-  display: flex;
-  font-size: var(--font-size-3xl-fluid);
-  justify-content: center;
-}
-
- .slide {
-  min-height: 300px;
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slide img {
-  width: 40%;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-
-.slide img:hover {
-  box-shadow: 2px 2px 10px var(--social-hover)
-}
-
-
-.slide-p {
-  max-width: 80%;
-  word-wrap: break-word;
-  text-align: center;
-}
-
-.slide-text h3 {
-  margin-bottom: 20px;
-}
-
-.slide-h3, .slide-text {
-  text-align: center;
-  margin: 30px auto;
-}
-
-.slide.active {
-  display: flex;
-  padding: 30px;
-}
-.slide.active button {
-  margin-top: 40px;
-}
-
-.prev, .next {
-  color: var(--primary-btn-hover);
-  background-color: transparent;
-  width: 50px;
-  border: none;
-  height: 50px;
-  padding: 5px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: var(--font-size-5xl-fluid);
-  outline: none;
-}
-
-.prev:hover, .next:hover {
-  color: var(--primary-btn);
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
-  outline: none;
-}
-
-.prev:active, .next:active {
-  transform: scale(0.8);
-  outline: none;
-} */
-
 .history {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 40px;
   padding: 1.5rem 2rem;
-  /* max-width: 1200px; */
   margin: auto;
   background-color: var(--tertiary-index);
   
@@ -908,6 +810,7 @@ select {
 .specialty-h3 {
   background-color: var(--tertiary-index);
   font-size: var(--font-size-2xl-fluid);
+  border-top:  3px solid var(--the-line);
   padding-top: 40px;
   display: block;
   text-align: center;
@@ -958,6 +861,7 @@ select {
   overflow: hidden;
   white-space: nowrap;
   background: var(--primary-bg);
+  border-top:  3px solid var(--the-line);
 }
 
 /* Flexbox wrapper that moves */
@@ -1138,7 +1042,7 @@ Old recipe Grid style wasnt really suitable for this job because wasnt responsiv
 } */
 
 
-.recipes-container {
+.recipes {
   max-width: 95%;
   margin: 0 auto;
   display: flex;
@@ -1219,14 +1123,6 @@ Old recipe Grid style wasnt really suitable for this job because wasnt responsiv
   padding: 20px;
 }
 
-/* Main Header */
-.main-header {
-  text-align: center;
-  font-size: var(--font-size-2xl-fluid);
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 /* Recipe Thumbnail Section */
 .recipe-thumbnail {
   display: flex;
@@ -1269,16 +1165,53 @@ Old recipe Grid style wasnt really suitable for this job because wasnt responsiv
   margin-bottom: 10px;
 }
 
-.details {
+#prep, #cooking, #serving-size {
+  border-left: 2px solid var(--btn-border);
+}
+
+.details, .action-button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  gap: 20px;
+  gap: 30px;
+  
 }
 
-.details div {
-  padding: 10px;
+.action-button button {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+#bookmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-left: 2px solid var(--btn-border);
+}
+
+#bookmark:active {
+  transform: scale(0.97);
+}
+
+
+#bookmark i {
+  font-size: var(--font-size-2xl-fluid);
+  padding: 30px;
+  color: var(--star);
+}
+
+#bookmark p {
+  font-size: var(--font-size-md-fluid);
+}
+
+
+.details div, .action-button div {
+  color: inherit;
+  padding: 15px;
   background: var(--tertiary-index);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1308,14 +1241,14 @@ Old recipe Grid style wasnt really suitable for this job because wasnt responsiv
   margin-top: 2rem;
 }
 
-.instructions-section {
+.instructions {
   background: var(--tertiary-index);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--secondary-bg);
 }
 
-.instructions-section h3 {
+.instructions h3 {
   margin-bottom: 20px;
 }
 
@@ -1347,7 +1280,7 @@ Old recipe Grid style wasnt really suitable for this job because wasnt responsiv
   color: var(--primary-text);
 }
 
-blockquote {
+blockquote .description {
   font-style: italic;
   color: var(--primary-text);
   padding-left: 10px;
@@ -1383,12 +1316,12 @@ blockquote {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ingredient-list:hover, .tools-list:hover, .instructions-section:hover, .food-img:hover, .food-info:hover, .reviews-container:hover {
+.ingredient-list:hover, .tools-list:hover, .instructions:hover, .food-img:hover, .food-info:hover, .reviews-container:hover, #bookmark:hover, #prep:hover, #cooking:hover, #serving-size:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px var(--social-hover);
 }
 
-.ingredient-list, .tools-list, .instructions-section, .food-img, .food-info {
+.ingredient-list, .tools-list, .instructions, .food-info {
   border-left: 5px solid var(--btn-border);
 }
 
