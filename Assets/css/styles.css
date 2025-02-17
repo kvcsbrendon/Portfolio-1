@@ -775,6 +775,16 @@ select {
   text-decoration: underline;
 }
 
+#meta-info {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#wrapper:hover #meta-info {
+  opacity: 1;
+}
+
 /* ============================= */
 /*         Index Styles          */
 /* ============================= */
